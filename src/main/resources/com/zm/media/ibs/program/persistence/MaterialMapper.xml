@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.media.ibs.program.persistence.MaterialMapper" >
+  <resultMap id="BaseResultMap" type="com.zm.media.ibs.program.entity.Material" >
+    <id column="materialId" property="materialId" jdbcType="VARCHAR" />
+    <result column="corpId" property="corpId" jdbcType="VARCHAR" />
+    <result column="md5" property="md5" jdbcType="VARCHAR" />
+    <result column="materialName" property="materialName" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="size" property="size" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="duration" property="duration" jdbcType="BIGINT" />
+    <result column="standard" property="standard" jdbcType="VARCHAR" />
+    <result column="relativePath" property="relativePath" jdbcType="VARCHAR" />
+    <result column="thumbnailPath" property="thumbnailPath" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="createBy" property="createBy" jdbcType="VARCHAR" />
+    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="auditBy" property="auditBy" jdbcType="VARCHAR" />
+    <result column="auditTime" property="auditTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    materialId, corpId, md5, materialName, type, size, status, duration, standard, relativePath, 
+    thumbnailPath, remark, createBy, createTime, auditBy, auditTime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zm.media.ibs.program.entity.MaterialExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_material
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_material
+    where materialId = #{materialId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbl_material
+    where materialId = #{materialId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zm.media.ibs.program.entity.MaterialExample" >
+    delete from tbl_material
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zm.media.ibs.program.entity.Material" >
+    insert into tbl_material (materialId, corpId, md5, 
+      materialName, type, size, 
+      status, duration, standard, 
+      relativePath, thumbnailPath, remark, 
+      createBy, createTime, auditBy, 
+      auditTime)
+    values (#{materialId,jdbcType=VARCHAR}, #{corpId,jdbcType=VARCHAR}, #{md5,jdbcType=VARCHAR}, 
+      #{materialName,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{size,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{duration,jdbcType=BIGINT}, #{standard,jdbcType=VARCHAR}, 
+      #{relativePath,jdbcType=VARCHAR}, #{thumbnailPath,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{auditBy,jdbcType=VARCHAR}, 
+      #{auditTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zm.media.ibs.program.entity.Material" >
+    insert into tbl_material
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="materialId != null" >
+        materialId,
+      </if>
+      <if test="corpId != null" >
+        corpId,
+      </if>
+      <if test="md5 != null" >
+        md5,
+      </if>
+      <if test="materialName != null" >
+        materialName,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="size != null" >
+        size,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="duration != null" >
+        duration,
+      </if>
+      <if test="standard != null" >
+        standard,
+      </if>
+      <if test="relativePath != null" >
+        relativePath,
+      </if>
+      <if test="thumbnailPath != null" >
+        thumbnailPath,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createBy != null" >
+        createBy,
+      </if>
+      <if test="createTime != null" >
+        createTime,
+      </if>
+      <if test="auditBy != null" >
+        auditBy,
+      </if>
+      <if test="auditTime != null" >
+        auditTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="materialId != null" >
+        #{materialId,jdbcType=VARCHAR},
+      </if>
+      <if test="corpId != null" >
+        #{corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="md5 != null" >
+        #{md5,jdbcType=VARCHAR},
+      </if>
+      <if test="materialName != null" >
+        #{materialName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="size != null" >
+        #{size,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="duration != null" >
+        #{duration,jdbcType=BIGINT},
+      </if>
+      <if test="standard != null" >
+        #{standard,jdbcType=VARCHAR},
+      </if>
+      <if test="relativePath != null" >
+        #{relativePath,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailPath != null" >
+        #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditBy != null" >
+        #{auditBy,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zm.media.ibs.program.entity.MaterialExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_material
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_material
+    <set >
+      <if test="record.materialId != null" >
+        materialId = #{record.materialId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corpId != null" >
+        corpId = #{record.corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.md5 != null" >
+        md5 = #{record.md5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.materialName != null" >
+        materialName = #{record.materialName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.size != null" >
+        size = #{record.size,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.duration != null" >
+        duration = #{record.duration,jdbcType=BIGINT},
+      </if>
+      <if test="record.standard != null" >
+        standard = #{record.standard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relativePath != null" >
+        relativePath = #{record.relativePath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thumbnailPath != null" >
+        thumbnailPath = #{record.thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createBy != null" >
+        createBy = #{record.createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.auditBy != null" >
+        auditBy = #{record.auditBy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.auditTime != null" >
+        auditTime = #{record.auditTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_material
+    set materialId = #{record.materialId,jdbcType=VARCHAR},
+      corpId = #{record.corpId,jdbcType=VARCHAR},
+      md5 = #{record.md5,jdbcType=VARCHAR},
+      materialName = #{record.materialName,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=INTEGER},
+      size = #{record.size,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=INTEGER},
+      duration = #{record.duration,jdbcType=BIGINT},
+      standard = #{record.standard,jdbcType=VARCHAR},
+      relativePath = #{record.relativePath,jdbcType=VARCHAR},
+      thumbnailPath = #{record.thumbnailPath,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      createBy = #{record.createBy,jdbcType=VARCHAR},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      auditBy = #{record.auditBy,jdbcType=VARCHAR},
+      auditTime = #{record.auditTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zm.media.ibs.program.entity.Material" >
+    update tbl_material
+    <set >
+      <if test="corpId != null" >
+        corpId = #{corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="md5 != null" >
+        md5 = #{md5,jdbcType=VARCHAR},
+      </if>
+      <if test="materialName != null" >
+        materialName = #{materialName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="size != null" >
+        size = #{size,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="duration != null" >
+        duration = #{duration,jdbcType=BIGINT},
+      </if>
+      <if test="standard != null" >
+        standard = #{standard,jdbcType=VARCHAR},
+      </if>
+      <if test="relativePath != null" >
+        relativePath = #{relativePath,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailPath != null" >
+        thumbnailPath = #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        createBy = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditBy != null" >
+        auditBy = #{auditBy,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        auditTime = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where materialId = #{materialId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.program.entity.Material" >
+    update tbl_material
+    set corpId = #{corpId,jdbcType=VARCHAR},
+      md5 = #{md5,jdbcType=VARCHAR},
+      materialName = #{materialName,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      size = #{size,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      duration = #{duration,jdbcType=BIGINT},
+      standard = #{standard,jdbcType=VARCHAR},
+      relativePath = #{relativePath,jdbcType=VARCHAR},
+      thumbnailPath = #{thumbnailPath,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      createBy = #{createBy,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      auditBy = #{auditBy,jdbcType=VARCHAR},
+      auditTime = #{auditTime,jdbcType=TIMESTAMP}
+    where materialId = #{materialId,jdbcType=VARCHAR}
+  </update>
+</mapper>

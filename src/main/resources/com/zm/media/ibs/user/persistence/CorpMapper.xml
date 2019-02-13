@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zm.media.ibs.user.persistence.CorpMapper">
+  <resultMap id="BaseResultMap" type="com.zm.media.ibs.user.entity.Corp">
+    <id column="corpId" jdbcType="VARCHAR" property="corpId" />
+    <result column="corpName" jdbcType="VARCHAR" property="corpName" />
+    <result column="corpCode" jdbcType="VARCHAR" property="corpCode" />
+    <result column="corpLogo" jdbcType="VARCHAR" property="corpLogo" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="updateBy" jdbcType="VARCHAR" property="updateBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    corpId, corpName, corpCode, corpLogo, location, createBy, updateBy, createTime, updateTime
+  </sql>
+  <select id="selectByExample" parameterType="com.zm.media.ibs.user.entity.CorpExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_corp
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_corp
+    where corpId = #{corpId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_corp
+    where corpId = #{corpId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zm.media.ibs.user.entity.CorpExample">
+    delete from tbl_corp
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zm.media.ibs.user.entity.Corp">
+    insert into tbl_corp (corpId, corpName, corpCode, 
+      corpLogo, location, createBy, 
+      updateBy, createTime, updateTime
+      )
+    values (#{corpId,jdbcType=VARCHAR}, #{corpName,jdbcType=VARCHAR}, #{corpCode,jdbcType=VARCHAR}, 
+      #{corpLogo,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
+      #{updateBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zm.media.ibs.user.entity.Corp">
+    insert into tbl_corp
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="corpId != null">
+        corpId,
+      </if>
+      <if test="corpName != null">
+        corpName,
+      </if>
+      <if test="corpCode != null">
+        corpCode,
+      </if>
+      <if test="corpLogo != null">
+        corpLogo,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="createBy != null">
+        createBy,
+      </if>
+      <if test="updateBy != null">
+        updateBy,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="corpId != null">
+        #{corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="corpName != null">
+        #{corpName,jdbcType=VARCHAR},
+      </if>
+      <if test="corpCode != null">
+        #{corpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="corpLogo != null">
+        #{corpLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zm.media.ibs.user.entity.CorpExample" resultType="java.lang.Integer">
+    select count(*) from tbl_corp
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_corp
+    <set>
+      <if test="record.corpId != null">
+        corpId = #{record.corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corpName != null">
+        corpName = #{record.corpName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corpCode != null">
+        corpCode = #{record.corpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corpLogo != null">
+        corpLogo = #{record.corpLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.location != null">
+        location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createBy != null">
+        createBy = #{record.createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateBy != null">
+        updateBy = #{record.updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        updateTime = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_corp
+    set corpId = #{record.corpId,jdbcType=VARCHAR},
+      corpName = #{record.corpName,jdbcType=VARCHAR},
+      corpCode = #{record.corpCode,jdbcType=VARCHAR},
+      corpLogo = #{record.corpLogo,jdbcType=VARCHAR},
+      location = #{record.location,jdbcType=VARCHAR},
+      createBy = #{record.createBy,jdbcType=VARCHAR},
+      updateBy = #{record.updateBy,jdbcType=VARCHAR},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      updateTime = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zm.media.ibs.user.entity.Corp">
+    update tbl_corp
+    <set>
+      <if test="corpName != null">
+        corpName = #{corpName,jdbcType=VARCHAR},
+      </if>
+      <if test="corpCode != null">
+        corpCode = #{corpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="corpLogo != null">
+        corpLogo = #{corpLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        createBy = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateBy != null">
+        updateBy = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where corpId = #{corpId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.user.entity.Corp">
+    update tbl_corp
+    set corpName = #{corpName,jdbcType=VARCHAR},
+      corpCode = #{corpCode,jdbcType=VARCHAR},
+      corpLogo = #{corpLogo,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      createBy = #{createBy,jdbcType=VARCHAR},
+      updateBy = #{updateBy,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP}
+    where corpId = #{corpId,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

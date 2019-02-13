@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.media.ibs.program.persistence.ElementMapper" >
+  <resultMap id="BaseResultMap" type="com.zm.media.ibs.program.entity.Element" >
+    <id column="elementId" property="elementId" jdbcType="VARCHAR" />
+    <result column="programId" property="programId" jdbcType="VARCHAR" />
+    <result column="elementName" property="elementName" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="background" property="background" jdbcType="VARCHAR" />
+    <result column="left" property="left" jdbcType="INTEGER" />
+    <result column="top" property="top" jdbcType="INTEGER" />
+    <result column="width" property="width" jdbcType="INTEGER" />
+    <result column="height" property="height" jdbcType="INTEGER" />
+    <result column="index" property="index" jdbcType="INTEGER" />
+    <result column="duration" property="duration" jdbcType="INTEGER" />
+    <result column="effect" property="effect" jdbcType="INTEGER" />
+    <result column="mode" property="mode" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    elementId, programId, elementName, type, background, left, top, width, height, index, 
+    duration, effect, mode, remark
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zm.media.ibs.program.entity.ElementExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_element
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_element
+    where elementId = #{elementId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbl_element
+    where elementId = #{elementId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zm.media.ibs.program.entity.ElementExample" >
+    delete from tbl_element
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zm.media.ibs.program.entity.Element" >
+    insert into tbl_element (elementId, programId, elementName, 
+      type, background, left, 
+      top, width, height, 
+      index, duration, effect, 
+      mode, remark)
+    values (#{elementId,jdbcType=VARCHAR}, #{programId,jdbcType=VARCHAR}, #{elementName,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{background,jdbcType=VARCHAR}, #{left,jdbcType=INTEGER}, 
+      #{top,jdbcType=INTEGER}, #{width,jdbcType=INTEGER}, #{height,jdbcType=INTEGER}, 
+      #{index,jdbcType=INTEGER}, #{duration,jdbcType=INTEGER}, #{effect,jdbcType=INTEGER}, 
+      #{mode,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zm.media.ibs.program.entity.Element" >
+    insert into tbl_element
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="elementId != null" >
+        elementId,
+      </if>
+      <if test="programId != null" >
+        programId,
+      </if>
+      <if test="elementName != null" >
+        elementName,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="background != null" >
+        background,
+      </if>
+      <if test="left != null" >
+        left,
+      </if>
+      <if test="top != null" >
+        top,
+      </if>
+      <if test="width != null" >
+        width,
+      </if>
+      <if test="height != null" >
+        height,
+      </if>
+      <if test="index != null" >
+        index,
+      </if>
+      <if test="duration != null" >
+        duration,
+      </if>
+      <if test="effect != null" >
+        effect,
+      </if>
+      <if test="mode != null" >
+        mode,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="elementId != null" >
+        #{elementId,jdbcType=VARCHAR},
+      </if>
+      <if test="programId != null" >
+        #{programId,jdbcType=VARCHAR},
+      </if>
+      <if test="elementName != null" >
+        #{elementName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="background != null" >
+        #{background,jdbcType=VARCHAR},
+      </if>
+      <if test="left != null" >
+        #{left,jdbcType=INTEGER},
+      </if>
+      <if test="top != null" >
+        #{top,jdbcType=INTEGER},
+      </if>
+      <if test="width != null" >
+        #{width,jdbcType=INTEGER},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=INTEGER},
+      </if>
+      <if test="index != null" >
+        #{index,jdbcType=INTEGER},
+      </if>
+      <if test="duration != null" >
+        #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="effect != null" >
+        #{effect,jdbcType=INTEGER},
+      </if>
+      <if test="mode != null" >
+        #{mode,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zm.media.ibs.program.entity.ElementExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_element
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_element
+    <set >
+      <if test="record.elementId != null" >
+        elementId = #{record.elementId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.programId != null" >
+        programId = #{record.programId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.elementName != null" >
+        elementName = #{record.elementName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.background != null" >
+        background = #{record.background,jdbcType=VARCHAR},
+      </if>
+      <if test="record.left != null" >
+        left = #{record.left,jdbcType=INTEGER},
+      </if>
+      <if test="record.top != null" >
+        top = #{record.top,jdbcType=INTEGER},
+      </if>
+      <if test="record.width != null" >
+        width = #{record.width,jdbcType=INTEGER},
+      </if>
+      <if test="record.height != null" >
+        height = #{record.height,jdbcType=INTEGER},
+      </if>
+      <if test="record.index != null" >
+        index = #{record.index,jdbcType=INTEGER},
+      </if>
+      <if test="record.duration != null" >
+        duration = #{record.duration,jdbcType=INTEGER},
+      </if>
+      <if test="record.effect != null" >
+        effect = #{record.effect,jdbcType=INTEGER},
+      </if>
+      <if test="record.mode != null" >
+        mode = #{record.mode,jdbcType=INTEGER},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_element
+    set elementId = #{record.elementId,jdbcType=VARCHAR},
+      programId = #{record.programId,jdbcType=VARCHAR},
+      elementName = #{record.elementName,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=INTEGER},
+      background = #{record.background,jdbcType=VARCHAR},
+      left = #{record.left,jdbcType=INTEGER},
+      top = #{record.top,jdbcType=INTEGER},
+      width = #{record.width,jdbcType=INTEGER},
+      height = #{record.height,jdbcType=INTEGER},
+      index = #{record.index,jdbcType=INTEGER},
+      duration = #{record.duration,jdbcType=INTEGER},
+      effect = #{record.effect,jdbcType=INTEGER},
+      mode = #{record.mode,jdbcType=INTEGER},
+      remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zm.media.ibs.program.entity.Element" >
+    update tbl_element
+    <set >
+      <if test="programId != null" >
+        programId = #{programId,jdbcType=VARCHAR},
+      </if>
+      <if test="elementName != null" >
+        elementName = #{elementName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="background != null" >
+        background = #{background,jdbcType=VARCHAR},
+      </if>
+      <if test="left != null" >
+        left = #{left,jdbcType=INTEGER},
+      </if>
+      <if test="top != null" >
+        top = #{top,jdbcType=INTEGER},
+      </if>
+      <if test="width != null" >
+        width = #{width,jdbcType=INTEGER},
+      </if>
+      <if test="height != null" >
+        height = #{height,jdbcType=INTEGER},
+      </if>
+      <if test="index != null" >
+        index = #{index,jdbcType=INTEGER},
+      </if>
+      <if test="duration != null" >
+        duration = #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="effect != null" >
+        effect = #{effect,jdbcType=INTEGER},
+      </if>
+      <if test="mode != null" >
+        mode = #{mode,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where elementId = #{elementId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.program.entity.Element" >
+    update tbl_element
+    set programId = #{programId,jdbcType=VARCHAR},
+      elementName = #{elementName,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      background = #{background,jdbcType=VARCHAR},
+      left = #{left,jdbcType=INTEGER},
+      top = #{top,jdbcType=INTEGER},
+      width = #{width,jdbcType=INTEGER},
+      height = #{height,jdbcType=INTEGER},
+      index = #{index,jdbcType=INTEGER},
+      duration = #{duration,jdbcType=INTEGER},
+      effect = #{effect,jdbcType=INTEGER},
+      mode = #{mode,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where elementId = #{elementId,jdbcType=VARCHAR}
+  </update>
+</mapper>
