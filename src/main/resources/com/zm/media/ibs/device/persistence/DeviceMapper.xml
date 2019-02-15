@@ -1,37 +1,37 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zm.media.ibs.device.persistence.DeviceMapper" >
-  <resultMap id="BaseResultMap" type="com.zm.media.ibs.device.entity.Device" >
-    <id column="deviceId" property="deviceId" jdbcType="VARCHAR" />
-    <result column="deviceCode" property="deviceCode" jdbcType="VARCHAR" />
-    <result column="netType" property="netType" jdbcType="INTEGER" />
-    <result column="netIP" property="netIP" jdbcType="VARCHAR" />
-    <result column="netMac" property="netMac" jdbcType="VARCHAR" />
-    <result column="resolution" property="resolution" jdbcType="VARCHAR" />
-    <result column="version" property="version" jdbcType="VARCHAR" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
-    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zm.media.ibs.device.persistence.DeviceMapper">
+  <resultMap id="BaseResultMap" type="com.zm.media.ibs.device.entity.Device">
+    <id column="deviceId" jdbcType="BIGINT" property="deviceId" />
+    <result column="deviceCode" jdbcType="VARCHAR" property="deviceCode" />
+    <result column="netType" jdbcType="INTEGER" property="netType" />
+    <result column="netIP" jdbcType="VARCHAR" property="netIP" />
+    <result column="netMac" jdbcType="VARCHAR" property="netMac" />
+    <result column="resolution" jdbcType="VARCHAR" property="resolution" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue" >
+                <when test="criterion.singleValue">
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue" >
+                <when test="criterion.betweenValue">
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue" >
+                <when test="criterion.listValue">
                   and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
                     #{listItem}
                   </foreach>
                 </when>
@@ -42,25 +42,25 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue" >
+                <when test="criterion.singleValue">
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue" >
+                <when test="criterion.betweenValue">
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue" >
+                <when test="criterion.listValue">
                   and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
                     #{listItem}
                   </foreach>
                 </when>
@@ -71,164 +71,164 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     deviceId, deviceCode, netType, netIP, netMac, resolution, version, remark, createTime, 
     updateTime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zm.media.ibs.device.entity.DeviceExample" >
+  <select id="selectByExample" parameterType="com.zm.media.ibs.device.entity.DeviceExample" resultMap="BaseResultMap">
     select
-    <if test="distinct" >
+    <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
     from tbl_device
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from tbl_device
-    where deviceId = #{deviceId,jdbcType=VARCHAR}
+    where deviceId = #{deviceId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from tbl_device
-    where deviceId = #{deviceId,jdbcType=VARCHAR}
+    where deviceId = #{deviceId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zm.media.ibs.device.entity.DeviceExample" >
+  <delete id="deleteByExample" parameterType="com.zm.media.ibs.device.entity.DeviceExample">
     delete from tbl_device
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zm.media.ibs.device.entity.Device" >
+  <insert id="insert" parameterType="com.zm.media.ibs.device.entity.Device">
     insert into tbl_device (deviceId, deviceCode, netType, 
       netIP, netMac, resolution, 
       version, remark, createTime, 
       updateTime)
-    values (#{deviceId,jdbcType=VARCHAR}, #{deviceCode,jdbcType=VARCHAR}, #{netType,jdbcType=INTEGER}, 
+    values (#{deviceId,jdbcType=BIGINT}, #{deviceCode,jdbcType=VARCHAR}, #{netType,jdbcType=INTEGER}, 
       #{netIP,jdbcType=VARCHAR}, #{netMac,jdbcType=VARCHAR}, #{resolution,jdbcType=VARCHAR}, 
       #{version,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.zm.media.ibs.device.entity.Device" >
+  <insert id="insertSelective" parameterType="com.zm.media.ibs.device.entity.Device">
     insert into tbl_device
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="deviceId != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
         deviceId,
       </if>
-      <if test="deviceCode != null" >
+      <if test="deviceCode != null">
         deviceCode,
       </if>
-      <if test="netType != null" >
+      <if test="netType != null">
         netType,
       </if>
-      <if test="netIP != null" >
+      <if test="netIP != null">
         netIP,
       </if>
-      <if test="netMac != null" >
+      <if test="netMac != null">
         netMac,
       </if>
-      <if test="resolution != null" >
+      <if test="resolution != null">
         resolution,
       </if>
-      <if test="version != null" >
+      <if test="version != null">
         version,
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         remark,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         createTime,
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         updateTime,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="deviceId != null" >
-        #{deviceId,jdbcType=VARCHAR},
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=BIGINT},
       </if>
-      <if test="deviceCode != null" >
+      <if test="deviceCode != null">
         #{deviceCode,jdbcType=VARCHAR},
       </if>
-      <if test="netType != null" >
+      <if test="netType != null">
         #{netType,jdbcType=INTEGER},
       </if>
-      <if test="netIP != null" >
+      <if test="netIP != null">
         #{netIP,jdbcType=VARCHAR},
       </if>
-      <if test="netMac != null" >
+      <if test="netMac != null">
         #{netMac,jdbcType=VARCHAR},
       </if>
-      <if test="resolution != null" >
+      <if test="resolution != null">
         #{resolution,jdbcType=VARCHAR},
       </if>
-      <if test="version != null" >
+      <if test="version != null">
         #{version,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zm.media.ibs.device.entity.DeviceExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.zm.media.ibs.device.entity.DeviceExample" resultType="java.lang.Integer">
     select count(*) from tbl_device
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map" >
+  <update id="updateByExampleSelective" parameterType="map">
     update tbl_device
-    <set >
-      <if test="record.deviceId != null" >
-        deviceId = #{record.deviceId,jdbcType=VARCHAR},
+    <set>
+      <if test="record.deviceId != null">
+        deviceId = #{record.deviceId,jdbcType=BIGINT},
       </if>
-      <if test="record.deviceCode != null" >
+      <if test="record.deviceCode != null">
         deviceCode = #{record.deviceCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.netType != null" >
+      <if test="record.netType != null">
         netType = #{record.netType,jdbcType=INTEGER},
       </if>
-      <if test="record.netIP != null" >
+      <if test="record.netIP != null">
         netIP = #{record.netIP,jdbcType=VARCHAR},
       </if>
-      <if test="record.netMac != null" >
+      <if test="record.netMac != null">
         netMac = #{record.netMac,jdbcType=VARCHAR},
       </if>
-      <if test="record.resolution != null" >
+      <if test="record.resolution != null">
         resolution = #{record.resolution,jdbcType=VARCHAR},
       </if>
-      <if test="record.version != null" >
+      <if test="record.version != null">
         version = #{record.version,jdbcType=VARCHAR},
       </if>
-      <if test="record.remark != null" >
+      <if test="record.remark != null">
         remark = #{record.remark,jdbcType=VARCHAR},
       </if>
-      <if test="record.createTime != null" >
+      <if test="record.createTime != null">
         createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.updateTime != null" >
+      <if test="record.updateTime != null">
         updateTime = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExample" parameterType="map" >
+  <update id="updateByExample" parameterType="map">
     update tbl_device
-    set deviceId = #{record.deviceId,jdbcType=VARCHAR},
+    set deviceId = #{record.deviceId,jdbcType=BIGINT},
       deviceCode = #{record.deviceCode,jdbcType=VARCHAR},
       netType = #{record.netType,jdbcType=INTEGER},
       netIP = #{record.netIP,jdbcType=VARCHAR},
@@ -238,44 +238,44 @@
       remark = #{record.remark,jdbcType=VARCHAR},
       createTime = #{record.createTime,jdbcType=TIMESTAMP},
       updateTime = #{record.updateTime,jdbcType=TIMESTAMP}
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zm.media.ibs.device.entity.Device" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zm.media.ibs.device.entity.Device">
     update tbl_device
-    <set >
-      <if test="deviceCode != null" >
+    <set>
+      <if test="deviceCode != null">
         deviceCode = #{deviceCode,jdbcType=VARCHAR},
       </if>
-      <if test="netType != null" >
+      <if test="netType != null">
         netType = #{netType,jdbcType=INTEGER},
       </if>
-      <if test="netIP != null" >
+      <if test="netIP != null">
         netIP = #{netIP,jdbcType=VARCHAR},
       </if>
-      <if test="netMac != null" >
+      <if test="netMac != null">
         netMac = #{netMac,jdbcType=VARCHAR},
       </if>
-      <if test="resolution != null" >
+      <if test="resolution != null">
         resolution = #{resolution,jdbcType=VARCHAR},
       </if>
-      <if test="version != null" >
+      <if test="version != null">
         version = #{version,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         remark = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         updateTime = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where deviceId = #{deviceId,jdbcType=VARCHAR}
+    where deviceId = #{deviceId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.device.entity.Device" >
+  <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.device.entity.Device">
     update tbl_device
     set deviceCode = #{deviceCode,jdbcType=VARCHAR},
       netType = #{netType,jdbcType=INTEGER},
@@ -286,6 +286,7 @@
       remark = #{remark,jdbcType=VARCHAR},
       createTime = #{createTime,jdbcType=TIMESTAMP},
       updateTime = #{updateTime,jdbcType=TIMESTAMP}
-    where deviceId = #{deviceId,jdbcType=VARCHAR}
+    where deviceId = #{deviceId,jdbcType=BIGINT}
   </update>
+
 </mapper>

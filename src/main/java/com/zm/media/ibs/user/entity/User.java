@@ -3,7 +3,7 @@ package com.zm.media.ibs.user.entity;
 import java.util.Date;
 
 public class User {
-    private String userId;
+    private Long userId;
 
     private String mobile;
 
@@ -19,12 +19,12 @@ public class User {
 
     private Date updatetime;
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getMobile() {

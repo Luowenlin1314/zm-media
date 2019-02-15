@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zm.media.ibs.user.persistence.CorpMapper">
   <resultMap id="BaseResultMap" type="com.zm.media.ibs.user.entity.Corp">
-    <id column="corpId" jdbcType="VARCHAR" property="corpId" />
+    <id column="corpId" jdbcType="BIGINT" property="corpId" />
     <result column="corpName" jdbcType="VARCHAR" property="corpName" />
     <result column="corpCode" jdbcType="VARCHAR" property="corpCode" />
     <result column="corpLogo" jdbcType="VARCHAR" property="corpLogo" />
     <result column="location" jdbcType="VARCHAR" property="location" />
-    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
-    <result column="updateBy" jdbcType="VARCHAR" property="updateBy" />
+    <result column="createBy" jdbcType="BIGINT" property="createBy" />
+    <result column="updateBy" jdbcType="BIGINT" property="updateBy" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
@@ -87,15 +87,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from tbl_corp
-    where corpId = #{corpId,jdbcType=VARCHAR}
+    where corpId = #{corpId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from tbl_corp
-    where corpId = #{corpId,jdbcType=VARCHAR}
+    where corpId = #{corpId,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="com.zm.media.ibs.user.entity.CorpExample">
     delete from tbl_corp
@@ -108,9 +108,9 @@
       corpLogo, location, createBy, 
       updateBy, createTime, updateTime
       )
-    values (#{corpId,jdbcType=VARCHAR}, #{corpName,jdbcType=VARCHAR}, #{corpCode,jdbcType=VARCHAR}, 
-      #{corpLogo,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
-      #{updateBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+    values (#{corpId,jdbcType=BIGINT}, #{corpName,jdbcType=VARCHAR}, #{corpCode,jdbcType=VARCHAR}, 
+      #{corpLogo,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{createBy,jdbcType=BIGINT}, 
+      #{updateBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.zm.media.ibs.user.entity.Corp">
@@ -146,7 +146,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="corpId != null">
-        #{corpId,jdbcType=VARCHAR},
+        #{corpId,jdbcType=BIGINT},
       </if>
       <if test="corpName != null">
         #{corpName,jdbcType=VARCHAR},
@@ -161,10 +161,10 @@
         #{location,jdbcType=VARCHAR},
       </if>
       <if test="createBy != null">
-        #{createBy,jdbcType=VARCHAR},
+        #{createBy,jdbcType=BIGINT},
       </if>
       <if test="updateBy != null">
-        #{updateBy,jdbcType=VARCHAR},
+        #{updateBy,jdbcType=BIGINT},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -184,7 +184,7 @@
     update tbl_corp
     <set>
       <if test="record.corpId != null">
-        corpId = #{record.corpId,jdbcType=VARCHAR},
+        corpId = #{record.corpId,jdbcType=BIGINT},
       </if>
       <if test="record.corpName != null">
         corpName = #{record.corpName,jdbcType=VARCHAR},
@@ -199,10 +199,10 @@
         location = #{record.location,jdbcType=VARCHAR},
       </if>
       <if test="record.createBy != null">
-        createBy = #{record.createBy,jdbcType=VARCHAR},
+        createBy = #{record.createBy,jdbcType=BIGINT},
       </if>
       <if test="record.updateBy != null">
-        updateBy = #{record.updateBy,jdbcType=VARCHAR},
+        updateBy = #{record.updateBy,jdbcType=BIGINT},
       </if>
       <if test="record.createTime != null">
         createTime = #{record.createTime,jdbcType=TIMESTAMP},
@@ -217,13 +217,13 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update tbl_corp
-    set corpId = #{record.corpId,jdbcType=VARCHAR},
+    set corpId = #{record.corpId,jdbcType=BIGINT},
       corpName = #{record.corpName,jdbcType=VARCHAR},
       corpCode = #{record.corpCode,jdbcType=VARCHAR},
       corpLogo = #{record.corpLogo,jdbcType=VARCHAR},
       location = #{record.location,jdbcType=VARCHAR},
-      createBy = #{record.createBy,jdbcType=VARCHAR},
-      updateBy = #{record.updateBy,jdbcType=VARCHAR},
+      createBy = #{record.createBy,jdbcType=BIGINT},
+      updateBy = #{record.updateBy,jdbcType=BIGINT},
       createTime = #{record.createTime,jdbcType=TIMESTAMP},
       updateTime = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
@@ -246,10 +246,10 @@
         location = #{location,jdbcType=VARCHAR},
       </if>
       <if test="createBy != null">
-        createBy = #{createBy,jdbcType=VARCHAR},
+        createBy = #{createBy,jdbcType=BIGINT},
       </if>
       <if test="updateBy != null">
-        updateBy = #{updateBy,jdbcType=VARCHAR},
+        updateBy = #{updateBy,jdbcType=BIGINT},
       </if>
       <if test="createTime != null">
         createTime = #{createTime,jdbcType=TIMESTAMP},
@@ -258,7 +258,7 @@
         updateTime = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where corpId = #{corpId,jdbcType=VARCHAR}
+    where corpId = #{corpId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.user.entity.Corp">
     update tbl_corp
@@ -266,11 +266,12 @@
       corpCode = #{corpCode,jdbcType=VARCHAR},
       corpLogo = #{corpLogo,jdbcType=VARCHAR},
       location = #{location,jdbcType=VARCHAR},
-      createBy = #{createBy,jdbcType=VARCHAR},
-      updateBy = #{updateBy,jdbcType=VARCHAR},
+      createBy = #{createBy,jdbcType=BIGINT},
+      updateBy = #{updateBy,jdbcType=BIGINT},
       createTime = #{createTime,jdbcType=TIMESTAMP},
       updateTime = #{updateTime,jdbcType=TIMESTAMP}
-    where corpId = #{corpId,jdbcType=VARCHAR}
+    where corpId = #{corpId,jdbcType=BIGINT}
   </update>
+
 
 </mapper>

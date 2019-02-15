@@ -8,17 +8,18 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_corp`;
 CREATE TABLE `tbl_corp` (
-  `corpId` varchar(32) NOT NULL COMMENT '主键',
+  `corpId` bigint(20) NOT NULL COMMENT '主键',
   `corpName` varchar(64) NOT NULL COMMENT '公司名称',
   `corpCode` varchar(8) NOT NULL COMMENT '公司邀请码',
   `corpLogo` varchar(128) DEFAULT NULL COMMENT '公司logo',
   `location` varchar(128) DEFAULT NULL COMMENT '公司地址',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
-  `updateBy` varchar(32) DEFAULT NULL COMMENT '更改者',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
+  `updateBy` bigint(20) DEFAULT NULL COMMENT '更改者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
   `updateTime` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`corpId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 -- ----------------------------
@@ -26,12 +27,12 @@ CREATE TABLE `tbl_corp` (
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_group`;
 CREATE TABLE `tbl_group` (
-  `groupId` varchar(32) NOT NULL COMMENT '主键',
-  `corpId` varchar(32) DEFAULT NULL COMMENT '公司id',
+  `groupId` bigint(20) NOT NULL COMMENT '主键',
+  `corpId` bigint(20) DEFAULT NULL COMMENT '公司id',
   `groupName` varchar(64) NOT NULL COMMENT '部门名称',
-  `parentId` varchar(32) DEFAULT NULL COMMENT '父部门id',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
-  `updateBy` varchar(32) DEFAULT NULL COMMENT ' 更改者id',
+  `parentId` bigint(20) DEFAULT NULL COMMENT '父部门id',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
+  `updateBy` bigint(20) DEFAULT NULL COMMENT ' 更改者id',
   `createTime` datetime NOT NULL COMMENT '创建时间',
   `updateTime` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`groupId`)
@@ -43,7 +44,7 @@ CREATE TABLE `tbl_group` (
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user` (
-  `userId` varchar(32) NOT NULL COMMENT '主键',
+  `userId` bigint(20) NOT NULL COMMENT '主键',
   `mobile` varchar(16) NOT NULL COMMENT '手机号',
   `userName` varchar(64) NOT NULL COMMENT '名称',
   `gender` int(1) NOT NULL DEFAULT '0' COMMENT '0男1女',
@@ -62,9 +63,9 @@ CREATE TABLE `tbl_user` (
 DROP TABLE IF EXISTS `tbl_user_corp`;
 CREATE TABLE `tbl_user_corp` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `userId` varchar(32) NOT NULL COMMENT '用户id',
-  `corpId` varchar(32) NOT NULL COMMENT '公司id',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
+  `userId` bigint(20) NOT NULL COMMENT '用户id',
+  `corpId` bigint(20) NOT NULL COMMENT '公司id',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -75,9 +76,9 @@ CREATE TABLE `tbl_user_corp` (
 DROP TABLE IF EXISTS `tbl_user_group`;
 CREATE TABLE `tbl_user_group` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `userId` varchar(32) NOT NULL COMMENT '用户id',
-  `groupId` varchar(32) NOT NULL COMMENT '部门id',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
+  `userId` bigint(20) NOT NULL COMMENT '用户id',
+  `groupId` bigint(20) NOT NULL COMMENT '部门id',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -87,28 +88,29 @@ CREATE TABLE `tbl_user_group` (
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_program`;
 CREATE TABLE `tbl_program` (
-  `programId` varchar(32) NOT NULL COMMENT '主键',
-  `corpId` varchar(32) NOT NULL COMMENT '公司id',
+  `programId` bigint(20) NOT NULL COMMENT '主键',
+  `corpId` bigint(20) NOT NULL COMMENT '公司id',
   `programName` varchar(64) NOT NULL COMMENT '主题名称',
   `type` int(1) DEFAULT NULL COMMENT '主题类型',
   `size` double NOT NULL COMMENT '主题包大小',
   `duration` int(11) NOT NULL COMMENT '主题时长，秒为单位',
   `status` int(1) NOT NULL DEFAULT '0' COMMENT '审核状态1审核0未审核',
   `remark` varchar(128) DEFAULT NULL COMMENT '备注',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
-  `updateBy` varchar(32) DEFAULT NULL COMMENT '更新人',
+  `updateBy` bigint(20) DEFAULT NULL COMMENT '更新人',
   `updateTime` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`programId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Table structure for `tbl_element`节目元素表
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_element`;
 CREATE TABLE `tbl_element` (
-  `elementId` varchar(32) NOT NULL COMMENT '主键',
-  `programId` varchar(32) NOT NULL COMMENT '主题id',
+  `elementId` bigint(20) NOT NULL COMMENT '主键',
+  `programId` bigint(20) NOT NULL COMMENT '主题id',
   `elementName` varchar(64) NOT NULL COMMENT '元素名称',
   `type` int(11) NOT NULL COMMENT '元素类型',
   `background` varchar(8) NOT NULL DEFAULT '' COMMENT '背景RGB',
@@ -124,13 +126,14 @@ CREATE TABLE `tbl_element` (
   PRIMARY KEY (`elementId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 -- ----------------------------
 -- Table structure for `tbl_material`素材表
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_material`;
 CREATE TABLE `tbl_material` (
-  `materialId` varchar(32) NOT NULL COMMENT ' 主键',
-  `corpId` varchar(32) NOT NULL COMMENT '公司id',
+  `materialId` bigint(20) NOT NULL COMMENT ' 主键',
+  `corpId` bigint(20) NOT NULL COMMENT '公司id',
   `md5` varchar(32) NOT NULL COMMENT '文件MD5',
   `materialName` varchar(64) NOT NULL COMMENT '素材名称',
   `type` int(2) NOT NULL COMMENT '素材类型',
@@ -141,9 +144,9 @@ CREATE TABLE `tbl_material` (
   `relativePath` varchar(128) NOT NULL COMMENT '素材相对路径',
   `thumbnailPath` varchar(128) DEFAULT NULL COMMENT '缩略图相对路径',
   `remark` varchar(128) DEFAULT NULL COMMENT '备注',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
-  `auditBy` varchar(32) DEFAULT NULL COMMENT '审批人',
+  `auditBy` bigint(20) DEFAULT NULL COMMENT '审批人',
   `auditTime` datetime DEFAULT NULL COMMENT '审批时间',
   PRIMARY KEY (`materialId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -154,19 +157,20 @@ CREATE TABLE `tbl_material` (
 DROP TABLE IF EXISTS `tbl_element_material`;
 CREATE TABLE `tbl_element_material` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `elementId` varchar(32) NOT NULL COMMENT '元素id',
-  `materialId` varchar(32) NOT NULL COMMENT '素材id',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
+  `elementId` bigint(20) NOT NULL COMMENT '元素id',
+  `materialId` bigint(20) NOT NULL COMMENT '素材id',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Table structure for `tbl_device`设备信息表
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_device`;
 CREATE TABLE `tbl_device` (
-  `deviceId` varchar(32) NOT NULL COMMENT '主键',
+  `deviceId` bigint(20) NOT NULL COMMENT '主键',
   `deviceCode` varchar(32) NOT NULL COMMENT '设备唯一编码',
   `netType` int(1) NOT NULL COMMENT '设备网络类型',
   `netIP` varchar(16) NOT NULL COMMENT '设备网络ip',
@@ -179,18 +183,19 @@ CREATE TABLE `tbl_device` (
   PRIMARY KEY (`deviceId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 -- ----------------------------
 -- Table structure for `tbl_dgroup`设备分组表
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_dgroup`;
 CREATE TABLE `tbl_dgroup` (
-  `dgroupId` varchar(32) NOT NULL COMMENT '主键',
-  `corpId` varchar(32) DEFAULT NULL COMMENT '公司id',
+  `dgroupId` bigint(20) NOT NULL COMMENT '主键',
+  `corpId` bigint(20) DEFAULT NULL COMMENT '公司id',
   `groupName` varchar(32) NOT NULL COMMENT '分组名称',
-  `parentId` varchar(32) DEFAULT NULL COMMENT '父分组id',
-  `createBy` varchar(20) NOT NULL COMMENT '创建者',
+  `parentId` bigint(20) DEFAULT NULL COMMENT '父分组id',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
-  `updateBy` varchar(32) DEFAULT NULL COMMENT '更新者',
+  `updateBy` bigint(20) DEFAULT NULL COMMENT '更新者',
   `updateTime` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`dgroupId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -201,8 +206,8 @@ CREATE TABLE `tbl_dgroup` (
 DROP TABLE IF EXISTS `tbl_device_corp`;
 CREATE TABLE `tbl_device_corp` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `deviceId` varchar(32) NOT NULL COMMENT '设备id',
-  `corpId` varchar(32) NOT NULL COMMENT '公司id',
+  `deviceId` bigint(20) NOT NULL COMMENT '设备id',
+  `corpId` bigint(20) NOT NULL COMMENT '公司id',
   `createTime` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -213,9 +218,9 @@ CREATE TABLE `tbl_device_corp` (
 DROP TABLE IF EXISTS `tbl_device_group`;
 CREATE TABLE `tbl_device_group` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `deviceId` varchar(32) NOT NULL COMMENT '设备id',
-  `dgroupId` varchar(32) NOT NULL COMMENT '设备分组id',
-  `createBy` varchar(32) NOT NULL COMMENT '创建者',
+  `deviceId` bigint(20) NOT NULL COMMENT '设备id',
+  `dgroupId` bigint(20) NOT NULL COMMENT '设备分组id',
+  `createBy` bigint(20) NOT NULL COMMENT '创建者',
   `createTime` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

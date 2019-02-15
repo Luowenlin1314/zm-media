@@ -1,7 +1,7 @@
 package com.zm.media.spring.config;
 
-import com.zm.media.ibs.netty.handler.HeartbeatHandler;
-import com.zm.media.ibs.netty.handler.MessageReceivedHandler;
+import com.zm.media.ibs.netty.handler.base.HeartbeatHandler;
+import com.zm.media.ibs.netty.handler.base.MessageReceivedHandler;
 import com.zm.media.spring.data.NettyProps;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -24,6 +24,10 @@ public class NettyConfig {
 
     @Autowired
     private NettyProps nettyProps;
+    @Autowired
+    private MessageReceivedHandler messageReceivedHandler;
+    @Autowired
+    private HeartbeatHandler heartbeatHandler;
 
     @Bean
     public Integer nettyPort(){
@@ -52,11 +56,11 @@ public class NettyConfig {
                         ChannelPipeline pipeline = ch.pipeline();
                         pipeline.addLast(new IdleStateHandler(nettyProps.getReadIdleTime(),
                                 nettyProps.getWriteIdleTime(), nettyProps.getAllIdleTime(), TimeUnit.SECONDS));
-                        pipeline.addLast(new HeartbeatHandler());
+                        pipeline.addLast(heartbeatHandler);
 
                         //ChannelPipeline用于存放管理ChannelHandel
                         //ChannelHandler用于处理请求响应的业务逻辑相关代码
-                        pipeline.addLast(new MessageReceivedHandler());
+                        pipeline.addLast(messageReceivedHandler);
                     }
                 })
                 //BACKLOG用于构造服务端套接字ServerSocket对象，标识当服务器请求处理线程全满时，

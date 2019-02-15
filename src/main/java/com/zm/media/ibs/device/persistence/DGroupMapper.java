@@ -10,7 +10,7 @@ public interface DGroupMapper {
 
     int deleteByExample(DGroupExample example);
 
-    int deleteByPrimaryKey(String dgroupId);
+    int deleteByPrimaryKey(Long dgroupId);
 
     int insert(DGroup record);
 
@@ -18,7 +18,7 @@ public interface DGroupMapper {
 
     List<DGroup> selectByExample(DGroupExample example);
 
-    DGroup selectByPrimaryKey(String dgroupId);
+    DGroup selectByPrimaryKey(Long dgroupId);
 
     int updateByExampleSelective(@Param("record") DGroup record, @Param("example") DGroupExample example);
 

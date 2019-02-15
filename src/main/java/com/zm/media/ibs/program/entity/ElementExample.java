@@ -114,62 +114,52 @@ public class ElementExample {
             return (Criteria) this;
         }
 
-        public Criteria andElementIdEqualTo(String value) {
+        public Criteria andElementIdEqualTo(Long value) {
             addCriterion("elementId =", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdNotEqualTo(String value) {
+        public Criteria andElementIdNotEqualTo(Long value) {
             addCriterion("elementId <>", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdGreaterThan(String value) {
+        public Criteria andElementIdGreaterThan(Long value) {
             addCriterion("elementId >", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdGreaterThanOrEqualTo(String value) {
+        public Criteria andElementIdGreaterThanOrEqualTo(Long value) {
             addCriterion("elementId >=", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdLessThan(String value) {
+        public Criteria andElementIdLessThan(Long value) {
             addCriterion("elementId <", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdLessThanOrEqualTo(String value) {
+        public Criteria andElementIdLessThanOrEqualTo(Long value) {
             addCriterion("elementId <=", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdLike(String value) {
-            addCriterion("elementId like", value, "elementId");
-            return (Criteria) this;
-        }
-
-        public Criteria andElementIdNotLike(String value) {
-            addCriterion("elementId not like", value, "elementId");
-            return (Criteria) this;
-        }
-
-        public Criteria andElementIdIn(List<String> values) {
+        public Criteria andElementIdIn(List<Long> values) {
             addCriterion("elementId in", values, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdNotIn(List<String> values) {
+        public Criteria andElementIdNotIn(List<Long> values) {
             addCriterion("elementId not in", values, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdBetween(String value1, String value2) {
+        public Criteria andElementIdBetween(Long value1, Long value2) {
             addCriterion("elementId between", value1, value2, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdNotBetween(String value1, String value2) {
+        public Criteria andElementIdNotBetween(Long value1, Long value2) {
             addCriterion("elementId not between", value1, value2, "elementId");
             return (Criteria) this;
         }
@@ -184,62 +174,52 @@ public class ElementExample {
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdEqualTo(String value) {
+        public Criteria andProgramIdEqualTo(Long value) {
             addCriterion("programId =", value, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdNotEqualTo(String value) {
+        public Criteria andProgramIdNotEqualTo(Long value) {
             addCriterion("programId <>", value, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdGreaterThan(String value) {
+        public Criteria andProgramIdGreaterThan(Long value) {
             addCriterion("programId >", value, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdGreaterThanOrEqualTo(String value) {
+        public Criteria andProgramIdGreaterThanOrEqualTo(Long value) {
             addCriterion("programId >=", value, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdLessThan(String value) {
+        public Criteria andProgramIdLessThan(Long value) {
             addCriterion("programId <", value, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdLessThanOrEqualTo(String value) {
+        public Criteria andProgramIdLessThanOrEqualTo(Long value) {
             addCriterion("programId <=", value, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdLike(String value) {
-            addCriterion("programId like", value, "programId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProgramIdNotLike(String value) {
-            addCriterion("programId not like", value, "programId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProgramIdIn(List<String> values) {
+        public Criteria andProgramIdIn(List<Long> values) {
             addCriterion("programId in", values, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdNotIn(List<String> values) {
+        public Criteria andProgramIdNotIn(List<Long> values) {
             addCriterion("programId not in", values, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdBetween(String value1, String value2) {
+        public Criteria andProgramIdBetween(Long value1, Long value2) {
             addCriterion("programId between", value1, value2, "programId");
             return (Criteria) this;
         }
 
-        public Criteria andProgramIdNotBetween(String value1, String value2) {
+        public Criteria andProgramIdNotBetween(Long value1, Long value2) {
             addCriterion("programId not between", value1, value2, "programId");
             return (Criteria) this;
         }

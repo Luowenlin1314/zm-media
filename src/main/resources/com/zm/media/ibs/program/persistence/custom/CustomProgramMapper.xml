@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.media.ibs.program.persistence.custom.CustomProgramMapper">
+
+    <select id="selectElementMaterials" resultType="com.zm.media.ibs.program.entity.Material">
+        SELECT a.* from tbl_material a
+        INNER JOIN tbl_element_material b ON a.materialId = b.materialId
+        INNER JOIN tbl_element c ON b.elementId = c.elementId
+        WHERE c.elementId = #{elementId}
+    </select>
+
+
+</mapper>

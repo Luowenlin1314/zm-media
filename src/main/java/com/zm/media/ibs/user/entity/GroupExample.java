@@ -115,62 +115,52 @@ public class GroupExample {
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdEqualTo(String value) {
+        public Criteria andGroupIdEqualTo(Long value) {
             addCriterion("groupId =", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdNotEqualTo(String value) {
+        public Criteria andGroupIdNotEqualTo(Long value) {
             addCriterion("groupId <>", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdGreaterThan(String value) {
+        public Criteria andGroupIdGreaterThan(Long value) {
             addCriterion("groupId >", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdGreaterThanOrEqualTo(String value) {
+        public Criteria andGroupIdGreaterThanOrEqualTo(Long value) {
             addCriterion("groupId >=", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdLessThan(String value) {
+        public Criteria andGroupIdLessThan(Long value) {
             addCriterion("groupId <", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdLessThanOrEqualTo(String value) {
+        public Criteria andGroupIdLessThanOrEqualTo(Long value) {
             addCriterion("groupId <=", value, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdLike(String value) {
-            addCriterion("groupId like", value, "groupId");
-            return (Criteria) this;
-        }
-
-        public Criteria andGroupIdNotLike(String value) {
-            addCriterion("groupId not like", value, "groupId");
-            return (Criteria) this;
-        }
-
-        public Criteria andGroupIdIn(List<String> values) {
+        public Criteria andGroupIdIn(List<Long> values) {
             addCriterion("groupId in", values, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdNotIn(List<String> values) {
+        public Criteria andGroupIdNotIn(List<Long> values) {
             addCriterion("groupId not in", values, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdBetween(String value1, String value2) {
+        public Criteria andGroupIdBetween(Long value1, Long value2) {
             addCriterion("groupId between", value1, value2, "groupId");
             return (Criteria) this;
         }
 
-        public Criteria andGroupIdNotBetween(String value1, String value2) {
+        public Criteria andGroupIdNotBetween(Long value1, Long value2) {
             addCriterion("groupId not between", value1, value2, "groupId");
             return (Criteria) this;
         }
@@ -185,62 +175,52 @@ public class GroupExample {
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdEqualTo(String value) {
+        public Criteria andCorpIdEqualTo(Long value) {
             addCriterion("corpId =", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdNotEqualTo(String value) {
+        public Criteria andCorpIdNotEqualTo(Long value) {
             addCriterion("corpId <>", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdGreaterThan(String value) {
+        public Criteria andCorpIdGreaterThan(Long value) {
             addCriterion("corpId >", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdGreaterThanOrEqualTo(String value) {
+        public Criteria andCorpIdGreaterThanOrEqualTo(Long value) {
             addCriterion("corpId >=", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdLessThan(String value) {
+        public Criteria andCorpIdLessThan(Long value) {
             addCriterion("corpId <", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdLessThanOrEqualTo(String value) {
+        public Criteria andCorpIdLessThanOrEqualTo(Long value) {
             addCriterion("corpId <=", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdLike(String value) {
-            addCriterion("corpId like", value, "corpId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCorpIdNotLike(String value) {
-            addCriterion("corpId not like", value, "corpId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCorpIdIn(List<String> values) {
+        public Criteria andCorpIdIn(List<Long> values) {
             addCriterion("corpId in", values, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdNotIn(List<String> values) {
+        public Criteria andCorpIdNotIn(List<Long> values) {
             addCriterion("corpId not in", values, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdBetween(String value1, String value2) {
+        public Criteria andCorpIdBetween(Long value1, Long value2) {
             addCriterion("corpId between", value1, value2, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdNotBetween(String value1, String value2) {
+        public Criteria andCorpIdNotBetween(Long value1, Long value2) {
             addCriterion("corpId not between", value1, value2, "corpId");
             return (Criteria) this;
         }
@@ -325,62 +305,52 @@ public class GroupExample {
             return (Criteria) this;
         }
 
-        public Criteria andParentIdEqualTo(String value) {
+        public Criteria andParentIdEqualTo(Long value) {
             addCriterion("parentId =", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdNotEqualTo(String value) {
+        public Criteria andParentIdNotEqualTo(Long value) {
             addCriterion("parentId <>", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdGreaterThan(String value) {
+        public Criteria andParentIdGreaterThan(Long value) {
             addCriterion("parentId >", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdGreaterThanOrEqualTo(String value) {
+        public Criteria andParentIdGreaterThanOrEqualTo(Long value) {
             addCriterion("parentId >=", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdLessThan(String value) {
+        public Criteria andParentIdLessThan(Long value) {
             addCriterion("parentId <", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdLessThanOrEqualTo(String value) {
+        public Criteria andParentIdLessThanOrEqualTo(Long value) {
             addCriterion("parentId <=", value, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdLike(String value) {
-            addCriterion("parentId like", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdNotLike(String value) {
-            addCriterion("parentId not like", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdIn(List<String> values) {
+        public Criteria andParentIdIn(List<Long> values) {
             addCriterion("parentId in", values, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdNotIn(List<String> values) {
+        public Criteria andParentIdNotIn(List<Long> values) {
             addCriterion("parentId not in", values, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdBetween(String value1, String value2) {
+        public Criteria andParentIdBetween(Long value1, Long value2) {
             addCriterion("parentId between", value1, value2, "parentId");
             return (Criteria) this;
         }
 
-        public Criteria andParentIdNotBetween(String value1, String value2) {
+        public Criteria andParentIdNotBetween(Long value1, Long value2) {
             addCriterion("parentId not between", value1, value2, "parentId");
             return (Criteria) this;
         }
@@ -395,62 +365,52 @@ public class GroupExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateByEqualTo(String value) {
+        public Criteria andCreateByEqualTo(Long value) {
             addCriterion("createBy =", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotEqualTo(String value) {
+        public Criteria andCreateByNotEqualTo(Long value) {
             addCriterion("createBy <>", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThan(String value) {
+        public Criteria andCreateByGreaterThan(Long value) {
             addCriterion("createBy >", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThanOrEqualTo(String value) {
+        public Criteria andCreateByGreaterThanOrEqualTo(Long value) {
             addCriterion("createBy >=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThan(String value) {
+        public Criteria andCreateByLessThan(Long value) {
             addCriterion("createBy <", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThanOrEqualTo(String value) {
+        public Criteria andCreateByLessThanOrEqualTo(Long value) {
             addCriterion("createBy <=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLike(String value) {
-            addCriterion("createBy like", value, "createBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateByNotLike(String value) {
-            addCriterion("createBy not like", value, "createBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateByIn(List<String> values) {
+        public Criteria andCreateByIn(List<Long> values) {
             addCriterion("createBy in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotIn(List<String> values) {
+        public Criteria andCreateByNotIn(List<Long> values) {
             addCriterion("createBy not in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByBetween(String value1, String value2) {
+        public Criteria andCreateByBetween(Long value1, Long value2) {
             addCriterion("createBy between", value1, value2, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotBetween(String value1, String value2) {
+        public Criteria andCreateByNotBetween(Long value1, Long value2) {
             addCriterion("createBy not between", value1, value2, "createBy");
             return (Criteria) this;
         }
@@ -465,62 +425,52 @@ public class GroupExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByEqualTo(String value) {
+        public Criteria andUpdateByEqualTo(Long value) {
             addCriterion("updateBy =", value, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByNotEqualTo(String value) {
+        public Criteria andUpdateByNotEqualTo(Long value) {
             addCriterion("updateBy <>", value, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByGreaterThan(String value) {
+        public Criteria andUpdateByGreaterThan(Long value) {
             addCriterion("updateBy >", value, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByGreaterThanOrEqualTo(String value) {
+        public Criteria andUpdateByGreaterThanOrEqualTo(Long value) {
             addCriterion("updateBy >=", value, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByLessThan(String value) {
+        public Criteria andUpdateByLessThan(Long value) {
             addCriterion("updateBy <", value, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByLessThanOrEqualTo(String value) {
+        public Criteria andUpdateByLessThanOrEqualTo(Long value) {
             addCriterion("updateBy <=", value, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByLike(String value) {
-            addCriterion("updateBy like", value, "updateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andUpdateByNotLike(String value) {
-            addCriterion("updateBy not like", value, "updateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andUpdateByIn(List<String> values) {
+        public Criteria andUpdateByIn(List<Long> values) {
             addCriterion("updateBy in", values, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByNotIn(List<String> values) {
+        public Criteria andUpdateByNotIn(List<Long> values) {
             addCriterion("updateBy not in", values, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByBetween(String value1, String value2) {
+        public Criteria andUpdateByBetween(Long value1, Long value2) {
             addCriterion("updateBy between", value1, value2, "updateBy");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateByNotBetween(String value1, String value2) {
+        public Criteria andUpdateByNotBetween(Long value1, Long value2) {
             addCriterion("updateBy not between", value1, value2, "updateBy");
             return (Criteria) this;
         }

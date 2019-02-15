@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zm.media.ibs.program.persistence.ElementMaterialMapper" >
-  <resultMap id="BaseResultMap" type="com.zm.media.ibs.program.entity.ElementMaterial" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="elementId" property="elementId" jdbcType="VARCHAR" />
-    <result column="materialId" property="materialId" jdbcType="VARCHAR" />
-    <result column="createBy" property="createBy" jdbcType="VARCHAR" />
-    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zm.media.ibs.program.persistence.ElementMaterialMapper">
+  <resultMap id="BaseResultMap" type="com.zm.media.ibs.program.entity.ElementMaterial">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="elementId" jdbcType="BIGINT" property="elementId" />
+    <result column="materialId" jdbcType="BIGINT" property="materialId" />
+    <result column="createBy" jdbcType="BIGINT" property="createBy" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue" >
+                <when test="criterion.singleValue">
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue" >
+                <when test="criterion.betweenValue">
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue" >
+                <when test="criterion.listValue">
                   and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
                     #{listItem}
                   </foreach>
                 </when>
@@ -37,25 +37,25 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue" >
+                <when test="criterion.singleValue">
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue" >
+                <when test="criterion.betweenValue">
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue" >
+                <when test="criterion.listValue">
                   and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
                     #{listItem}
                   </foreach>
                 </when>
@@ -66,146 +66,147 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     id, elementId, materialId, createBy, createTime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zm.media.ibs.program.entity.ElementMaterialExample" >
+  <select id="selectByExample" parameterType="com.zm.media.ibs.program.entity.ElementMaterialExample" resultMap="BaseResultMap">
     select
-    <if test="distinct" >
+    <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
     from tbl_element_material
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from tbl_element_material
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from tbl_element_material
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zm.media.ibs.program.entity.ElementMaterialExample" >
+  <delete id="deleteByExample" parameterType="com.zm.media.ibs.program.entity.ElementMaterialExample">
     delete from tbl_element_material
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zm.media.ibs.program.entity.ElementMaterial" >
+  <insert id="insert" parameterType="com.zm.media.ibs.program.entity.ElementMaterial">
     insert into tbl_element_material (id, elementId, materialId, 
       createBy, createTime)
-    values (#{id,jdbcType=BIGINT}, #{elementId,jdbcType=VARCHAR}, #{materialId,jdbcType=VARCHAR}, 
-      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+    values (#{id,jdbcType=BIGINT}, #{elementId,jdbcType=BIGINT}, #{materialId,jdbcType=BIGINT}, 
+      #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.zm.media.ibs.program.entity.ElementMaterial" >
+  <insert id="insertSelective" parameterType="com.zm.media.ibs.program.entity.ElementMaterial">
     insert into tbl_element_material
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="elementId != null" >
+      <if test="elementId != null">
         elementId,
       </if>
-      <if test="materialId != null" >
+      <if test="materialId != null">
         materialId,
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null">
         createBy,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         createTime,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="elementId != null" >
-        #{elementId,jdbcType=VARCHAR},
+      <if test="elementId != null">
+        #{elementId,jdbcType=BIGINT},
       </if>
-      <if test="materialId != null" >
-        #{materialId,jdbcType=VARCHAR},
+      <if test="materialId != null">
+        #{materialId,jdbcType=BIGINT},
       </if>
-      <if test="createBy != null" >
-        #{createBy,jdbcType=VARCHAR},
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zm.media.ibs.program.entity.ElementMaterialExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.zm.media.ibs.program.entity.ElementMaterialExample" resultType="java.lang.Integer">
     select count(*) from tbl_element_material
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map" >
+  <update id="updateByExampleSelective" parameterType="map">
     update tbl_element_material
-    <set >
-      <if test="record.id != null" >
+    <set>
+      <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.elementId != null" >
-        elementId = #{record.elementId,jdbcType=VARCHAR},
+      <if test="record.elementId != null">
+        elementId = #{record.elementId,jdbcType=BIGINT},
       </if>
-      <if test="record.materialId != null" >
-        materialId = #{record.materialId,jdbcType=VARCHAR},
+      <if test="record.materialId != null">
+        materialId = #{record.materialId,jdbcType=BIGINT},
       </if>
-      <if test="record.createBy != null" >
-        createBy = #{record.createBy,jdbcType=VARCHAR},
+      <if test="record.createBy != null">
+        createBy = #{record.createBy,jdbcType=BIGINT},
       </if>
-      <if test="record.createTime != null" >
+      <if test="record.createTime != null">
         createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExample" parameterType="map" >
+  <update id="updateByExample" parameterType="map">
     update tbl_element_material
     set id = #{record.id,jdbcType=BIGINT},
-      elementId = #{record.elementId,jdbcType=VARCHAR},
-      materialId = #{record.materialId,jdbcType=VARCHAR},
-      createBy = #{record.createBy,jdbcType=VARCHAR},
+      elementId = #{record.elementId,jdbcType=BIGINT},
+      materialId = #{record.materialId,jdbcType=BIGINT},
+      createBy = #{record.createBy,jdbcType=BIGINT},
       createTime = #{record.createTime,jdbcType=TIMESTAMP}
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zm.media.ibs.program.entity.ElementMaterial" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zm.media.ibs.program.entity.ElementMaterial">
     update tbl_element_material
-    <set >
-      <if test="elementId != null" >
-        elementId = #{elementId,jdbcType=VARCHAR},
+    <set>
+      <if test="elementId != null">
+        elementId = #{elementId,jdbcType=BIGINT},
       </if>
-      <if test="materialId != null" >
-        materialId = #{materialId,jdbcType=VARCHAR},
+      <if test="materialId != null">
+        materialId = #{materialId,jdbcType=BIGINT},
       </if>
-      <if test="createBy != null" >
-        createBy = #{createBy,jdbcType=VARCHAR},
+      <if test="createBy != null">
+        createBy = #{createBy,jdbcType=BIGINT},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.program.entity.ElementMaterial" >
+  <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.program.entity.ElementMaterial">
     update tbl_element_material
-    set elementId = #{elementId,jdbcType=VARCHAR},
-      materialId = #{materialId,jdbcType=VARCHAR},
-      createBy = #{createBy,jdbcType=VARCHAR},
+    set elementId = #{elementId,jdbcType=BIGINT},
+      materialId = #{materialId,jdbcType=BIGINT},
+      createBy = #{createBy,jdbcType=BIGINT},
       createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
 </mapper>

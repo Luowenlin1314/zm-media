@@ -175,62 +175,52 @@ public class ElementMaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andElementIdEqualTo(String value) {
+        public Criteria andElementIdEqualTo(Long value) {
             addCriterion("elementId =", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdNotEqualTo(String value) {
+        public Criteria andElementIdNotEqualTo(Long value) {
             addCriterion("elementId <>", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdGreaterThan(String value) {
+        public Criteria andElementIdGreaterThan(Long value) {
             addCriterion("elementId >", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdGreaterThanOrEqualTo(String value) {
+        public Criteria andElementIdGreaterThanOrEqualTo(Long value) {
             addCriterion("elementId >=", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdLessThan(String value) {
+        public Criteria andElementIdLessThan(Long value) {
             addCriterion("elementId <", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdLessThanOrEqualTo(String value) {
+        public Criteria andElementIdLessThanOrEqualTo(Long value) {
             addCriterion("elementId <=", value, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdLike(String value) {
-            addCriterion("elementId like", value, "elementId");
-            return (Criteria) this;
-        }
-
-        public Criteria andElementIdNotLike(String value) {
-            addCriterion("elementId not like", value, "elementId");
-            return (Criteria) this;
-        }
-
-        public Criteria andElementIdIn(List<String> values) {
+        public Criteria andElementIdIn(List<Long> values) {
             addCriterion("elementId in", values, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdNotIn(List<String> values) {
+        public Criteria andElementIdNotIn(List<Long> values) {
             addCriterion("elementId not in", values, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdBetween(String value1, String value2) {
+        public Criteria andElementIdBetween(Long value1, Long value2) {
             addCriterion("elementId between", value1, value2, "elementId");
             return (Criteria) this;
         }
 
-        public Criteria andElementIdNotBetween(String value1, String value2) {
+        public Criteria andElementIdNotBetween(Long value1, Long value2) {
             addCriterion("elementId not between", value1, value2, "elementId");
             return (Criteria) this;
         }
@@ -245,62 +235,52 @@ public class ElementMaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdEqualTo(String value) {
+        public Criteria andMaterialIdEqualTo(Long value) {
             addCriterion("materialId =", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotEqualTo(String value) {
+        public Criteria andMaterialIdNotEqualTo(Long value) {
             addCriterion("materialId <>", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdGreaterThan(String value) {
+        public Criteria andMaterialIdGreaterThan(Long value) {
             addCriterion("materialId >", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdGreaterThanOrEqualTo(String value) {
+        public Criteria andMaterialIdGreaterThanOrEqualTo(Long value) {
             addCriterion("materialId >=", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLessThan(String value) {
+        public Criteria andMaterialIdLessThan(Long value) {
             addCriterion("materialId <", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLessThanOrEqualTo(String value) {
+        public Criteria andMaterialIdLessThanOrEqualTo(Long value) {
             addCriterion("materialId <=", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLike(String value) {
-            addCriterion("materialId like", value, "materialId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaterialIdNotLike(String value) {
-            addCriterion("materialId not like", value, "materialId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaterialIdIn(List<String> values) {
+        public Criteria andMaterialIdIn(List<Long> values) {
             addCriterion("materialId in", values, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotIn(List<String> values) {
+        public Criteria andMaterialIdNotIn(List<Long> values) {
             addCriterion("materialId not in", values, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdBetween(String value1, String value2) {
+        public Criteria andMaterialIdBetween(Long value1, Long value2) {
             addCriterion("materialId between", value1, value2, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotBetween(String value1, String value2) {
+        public Criteria andMaterialIdNotBetween(Long value1, Long value2) {
             addCriterion("materialId not between", value1, value2, "materialId");
             return (Criteria) this;
         }
@@ -315,62 +295,52 @@ public class ElementMaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateByEqualTo(String value) {
+        public Criteria andCreateByEqualTo(Long value) {
             addCriterion("createBy =", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotEqualTo(String value) {
+        public Criteria andCreateByNotEqualTo(Long value) {
             addCriterion("createBy <>", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThan(String value) {
+        public Criteria andCreateByGreaterThan(Long value) {
             addCriterion("createBy >", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThanOrEqualTo(String value) {
+        public Criteria andCreateByGreaterThanOrEqualTo(Long value) {
             addCriterion("createBy >=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThan(String value) {
+        public Criteria andCreateByLessThan(Long value) {
             addCriterion("createBy <", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThanOrEqualTo(String value) {
+        public Criteria andCreateByLessThanOrEqualTo(Long value) {
             addCriterion("createBy <=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLike(String value) {
-            addCriterion("createBy like", value, "createBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateByNotLike(String value) {
-            addCriterion("createBy not like", value, "createBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateByIn(List<String> values) {
+        public Criteria andCreateByIn(List<Long> values) {
             addCriterion("createBy in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotIn(List<String> values) {
+        public Criteria andCreateByNotIn(List<Long> values) {
             addCriterion("createBy not in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByBetween(String value1, String value2) {
+        public Criteria andCreateByBetween(Long value1, Long value2) {
             addCriterion("createBy between", value1, value2, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotBetween(String value1, String value2) {
+        public Criteria andCreateByNotBetween(Long value1, Long value2) {
             addCriterion("createBy not between", value1, value2, "createBy");
             return (Criteria) this;
         }

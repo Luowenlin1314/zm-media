@@ -5,9 +5,9 @@ import java.util.Date;
 public class DeviceCorp {
     private Long id;
 
-    private String deviceId;
+    private Long deviceId;
 
-    private String corpId;
+    private Long corpId;
 
     private Date createTime;
 
@@ -19,20 +19,20 @@ public class DeviceCorp {
         this.id = id;
     }
 
-    public String getDeviceId() {
+    public Long getDeviceId() {
         return deviceId;
     }
 
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId == null ? null : deviceId.trim();
+    public void setDeviceId(Long deviceId) {
+        this.deviceId = deviceId;
     }
 
-    public String getCorpId() {
+    public Long getCorpId() {
         return corpId;
     }
 
-    public void setCorpId(String corpId) {
-        this.corpId = corpId == null ? null : corpId.trim();
+    public void setCorpId(Long corpId) {
+        this.corpId = corpId;
     }
 
     public Date getCreateTime() {

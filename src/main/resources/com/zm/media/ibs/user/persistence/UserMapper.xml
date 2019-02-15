@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zm.media.ibs.user.persistence.UserMapper">
   <resultMap id="BaseResultMap" type="com.zm.media.ibs.user.entity.User">
-    <id column="userId" jdbcType="VARCHAR" property="userId" />
+    <id column="userId" jdbcType="BIGINT" property="userId" />
     <result column="mobile" jdbcType="VARCHAR" property="mobile" />
     <result column="userName" jdbcType="VARCHAR" property="userName" />
     <result column="gender" jdbcType="INTEGER" property="gender" />
@@ -86,15 +86,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from tbl_user
-    where userId = #{userId,jdbcType=VARCHAR}
+    where userId = #{userId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from tbl_user
-    where userId = #{userId,jdbcType=VARCHAR}
+    where userId = #{userId,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="com.zm.media.ibs.user.entity.UserExample">
     delete from tbl_user
@@ -106,7 +106,7 @@
     insert into tbl_user (userId, mobile, userName, 
       gender, avatar, status, 
       createtime, updatetime)
-    values (#{userId,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+    values (#{userId,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
       #{gender,jdbcType=INTEGER}, #{avatar,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
       #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
   </insert>
@@ -140,7 +140,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="userId != null">
-        #{userId,jdbcType=VARCHAR},
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="mobile != null">
         #{mobile,jdbcType=VARCHAR},
@@ -175,7 +175,7 @@
     update tbl_user
     <set>
       <if test="record.userId != null">
-        userId = #{record.userId,jdbcType=VARCHAR},
+        userId = #{record.userId,jdbcType=BIGINT},
       </if>
       <if test="record.mobile != null">
         mobile = #{record.mobile,jdbcType=VARCHAR},
@@ -205,7 +205,7 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update tbl_user
-    set userId = #{record.userId,jdbcType=VARCHAR},
+    set userId = #{record.userId,jdbcType=BIGINT},
       mobile = #{record.mobile,jdbcType=VARCHAR},
       userName = #{record.userName,jdbcType=VARCHAR},
       gender = #{record.gender,jdbcType=INTEGER},
@@ -242,7 +242,7 @@
         updatetime = #{updatetime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where userId = #{userId,jdbcType=VARCHAR}
+    where userId = #{userId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.user.entity.User">
     update tbl_user
@@ -253,7 +253,7 @@
       status = #{status,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
-    where userId = #{userId,jdbcType=VARCHAR}
+    where userId = #{userId,jdbcType=BIGINT}
   </update>
 
 </mapper>

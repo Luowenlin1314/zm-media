@@ -1,9 +1,9 @@
 package com.zm.media.ibs.program.entity;
 
 public class Element {
-    private String elementId;
+    private Long elementId;
 
-    private String programId;
+    private Long programId;
 
     private String elementName;
 
@@ -29,20 +29,20 @@ public class Element {
 
     private String remark;
 
-    public String getElementId() {
+    public Long getElementId() {
         return elementId;
     }
 
-    public void setElementId(String elementId) {
-        this.elementId = elementId == null ? null : elementId.trim();
+    public void setElementId(Long elementId) {
+        this.elementId = elementId;
     }
 
-    public String getProgramId() {
+    public Long getProgramId() {
         return programId;
     }
 
-    public void setProgramId(String programId) {
-        this.programId = programId == null ? null : programId.trim();
+    public void setProgramId(Long programId) {
+        this.programId = programId;
     }
 
     public String getElementName() {

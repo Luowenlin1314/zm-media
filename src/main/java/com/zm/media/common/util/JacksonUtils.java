@@ -51,7 +51,6 @@ final public class JacksonUtils {
         try {
             object = objectMapper.readValue(jsonStr, cls);
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return object;
     }

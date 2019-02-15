@@ -5,11 +5,11 @@ import java.util.Date;
 public class ElementMaterial {
     private Long id;
 
-    private String elementId;
+    private Long elementId;
 
-    private String materialId;
+    private Long materialId;
 
-    private String createBy;
+    private Long createBy;
 
     private Date createTime;
 
@@ -21,28 +21,28 @@ public class ElementMaterial {
         this.id = id;
     }
 
-    public String getElementId() {
+    public Long getElementId() {
         return elementId;
     }
 
-    public void setElementId(String elementId) {
-        this.elementId = elementId == null ? null : elementId.trim();
+    public void setElementId(Long elementId) {
+        this.elementId = elementId;
     }
 
-    public String getMaterialId() {
+    public Long getMaterialId() {
         return materialId;
     }
 
-    public void setMaterialId(String materialId) {
-        this.materialId = materialId == null ? null : materialId.trim();
+    public void setMaterialId(Long materialId) {
+        this.materialId = materialId;
     }
 
-    public String getCreateBy() {
+    public Long getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
     public Date getCreateTime() {

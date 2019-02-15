@@ -3,9 +3,9 @@ package com.zm.media.ibs.program.entity;
 import java.util.Date;
 
 public class Program {
-    private String programId;
+    private Long programId;
 
-    private String corpId;
+    private Long corpId;
 
     private String programName;
 
@@ -19,28 +19,28 @@ public class Program {
 
     private String remark;
 
-    private String createBy;
+    private Long createBy;
 
     private Date createTime;
 
-    private String updateBy;
+    private Long updateBy;
 
     private Date updateTime;
 
-    public String getProgramId() {
+    public Long getProgramId() {
         return programId;
     }
 
-    public void setProgramId(String programId) {
-        this.programId = programId == null ? null : programId.trim();
+    public void setProgramId(Long programId) {
+        this.programId = programId;
     }
 
-    public String getCorpId() {
+    public Long getCorpId() {
         return corpId;
     }
 
-    public void setCorpId(String corpId) {
-        this.corpId = corpId == null ? null : corpId.trim();
+    public void setCorpId(Long corpId) {
+        this.corpId = corpId;
     }
 
     public String getProgramName() {
@@ -91,12 +91,12 @@ public class Program {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public String getCreateBy() {
+    public Long getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
     public Date getCreateTime() {
@@ -107,12 +107,12 @@ public class Program {
         this.createTime = createTime;
     }
 
-    public String getUpdateBy() {
+    public Long getUpdateBy() {
         return updateBy;
     }
 
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy == null ? null : updateBy.trim();
+    public void setUpdateBy(Long updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Date getUpdateTime() {

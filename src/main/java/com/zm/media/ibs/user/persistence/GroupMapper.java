@@ -10,7 +10,7 @@ public interface GroupMapper {
 
     int deleteByExample(GroupExample example);
 
-    int deleteByPrimaryKey(String groupId);
+    int deleteByPrimaryKey(Long groupId);
 
     int insert(Group record);
 
@@ -18,7 +18,7 @@ public interface GroupMapper {
 
     List<Group> selectByExample(GroupExample example);
 
-    Group selectByPrimaryKey(String groupId);
+    Group selectByPrimaryKey(Long groupId);
 
     int updateByExampleSelective(@Param("record") Group record, @Param("example") GroupExample example);
 

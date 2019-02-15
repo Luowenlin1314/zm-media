@@ -3,7 +3,7 @@ package com.zm.media.ibs.device.entity;
 import java.util.Date;
 
 public class Device {
-    private String deviceId;
+    private Long deviceId;
 
     private String deviceCode;
 
@@ -23,12 +23,12 @@ public class Device {
 
     private Date updateTime;
 
-    public String getDeviceId() {
+    public Long getDeviceId() {
         return deviceId;
     }
 
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId == null ? null : deviceId.trim();
+    public void setDeviceId(Long deviceId) {
+        this.deviceId = deviceId;
     }
 
     public String getDeviceCode() {

@@ -10,7 +10,7 @@ public interface ProgramMapper {
 
     int deleteByExample(ProgramExample example);
 
-    int deleteByPrimaryKey(String programId);
+    int deleteByPrimaryKey(Long programId);
 
     int insert(Program record);
 
@@ -18,7 +18,7 @@ public interface ProgramMapper {
 
     List<Program> selectByExample(ProgramExample example);
 
-    Program selectByPrimaryKey(String programId);
+    Program selectByPrimaryKey(Long programId);
 
     int updateByExampleSelective(@Param("record") Program record, @Param("example") ProgramExample example);
 

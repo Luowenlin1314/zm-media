@@ -10,7 +10,7 @@ public interface MaterialMapper {
 
     int deleteByExample(MaterialExample example);
 
-    int deleteByPrimaryKey(String materialId);
+    int deleteByPrimaryKey(Long materialId);
 
     int insert(Material record);
 
@@ -18,7 +18,7 @@ public interface MaterialMapper {
 
     List<Material> selectByExample(MaterialExample example);
 
-    Material selectByPrimaryKey(String materialId);
+    Material selectByPrimaryKey(Long materialId);
 
     int updateByExampleSelective(@Param("record") Material record, @Param("example") MaterialExample example);
 

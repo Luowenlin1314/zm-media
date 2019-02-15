@@ -10,7 +10,7 @@ public interface ElementMapper {
 
     int deleteByExample(ElementExample example);
 
-    int deleteByPrimaryKey(String elementId);
+    int deleteByPrimaryKey(Long elementId);
 
     int insert(Element record);
 
@@ -18,7 +18,7 @@ public interface ElementMapper {
 
     List<Element> selectByExample(ElementExample example);
 
-    Element selectByPrimaryKey(String elementId);
+    Element selectByPrimaryKey(Long elementId);
 
     int updateByExampleSelective(@Param("record") Element record, @Param("example") ElementExample example);
 

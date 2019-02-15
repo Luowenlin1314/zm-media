@@ -3,9 +3,9 @@
 <mapper namespace="com.zm.media.ibs.user.persistence.UserCorpMapper">
   <resultMap id="BaseResultMap" type="com.zm.media.ibs.user.entity.UserCorp">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="userId" jdbcType="VARCHAR" property="userId" />
-    <result column="corpId" jdbcType="VARCHAR" property="corpId" />
-    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="userId" jdbcType="BIGINT" property="userId" />
+    <result column="corpId" jdbcType="BIGINT" property="corpId" />
+    <result column="createBy" jdbcType="BIGINT" property="createBy" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -102,8 +102,8 @@
   <insert id="insert" parameterType="com.zm.media.ibs.user.entity.UserCorp">
     insert into tbl_user_corp (id, userId, corpId, 
       createBy, createTime)
-    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{corpId,jdbcType=VARCHAR}, 
-      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{corpId,jdbcType=BIGINT}, 
+      #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.zm.media.ibs.user.entity.UserCorp">
     insert into tbl_user_corp
@@ -129,13 +129,13 @@
         #{id,jdbcType=BIGINT},
       </if>
       <if test="userId != null">
-        #{userId,jdbcType=VARCHAR},
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="corpId != null">
-        #{corpId,jdbcType=VARCHAR},
+        #{corpId,jdbcType=BIGINT},
       </if>
       <if test="createBy != null">
-        #{createBy,jdbcType=VARCHAR},
+        #{createBy,jdbcType=BIGINT},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -155,13 +155,13 @@
         id = #{record.id,jdbcType=BIGINT},
       </if>
       <if test="record.userId != null">
-        userId = #{record.userId,jdbcType=VARCHAR},
+        userId = #{record.userId,jdbcType=BIGINT},
       </if>
       <if test="record.corpId != null">
-        corpId = #{record.corpId,jdbcType=VARCHAR},
+        corpId = #{record.corpId,jdbcType=BIGINT},
       </if>
       <if test="record.createBy != null">
-        createBy = #{record.createBy,jdbcType=VARCHAR},
+        createBy = #{record.createBy,jdbcType=BIGINT},
       </if>
       <if test="record.createTime != null">
         createTime = #{record.createTime,jdbcType=TIMESTAMP},
@@ -174,9 +174,9 @@
   <update id="updateByExample" parameterType="map">
     update tbl_user_corp
     set id = #{record.id,jdbcType=BIGINT},
-      userId = #{record.userId,jdbcType=VARCHAR},
-      corpId = #{record.corpId,jdbcType=VARCHAR},
-      createBy = #{record.createBy,jdbcType=VARCHAR},
+      userId = #{record.userId,jdbcType=BIGINT},
+      corpId = #{record.corpId,jdbcType=BIGINT},
+      createBy = #{record.createBy,jdbcType=BIGINT},
       createTime = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -186,13 +186,13 @@
     update tbl_user_corp
     <set>
       <if test="userId != null">
-        userId = #{userId,jdbcType=VARCHAR},
+        userId = #{userId,jdbcType=BIGINT},
       </if>
       <if test="corpId != null">
-        corpId = #{corpId,jdbcType=VARCHAR},
+        corpId = #{corpId,jdbcType=BIGINT},
       </if>
       <if test="createBy != null">
-        createBy = #{createBy,jdbcType=VARCHAR},
+        createBy = #{createBy,jdbcType=BIGINT},
       </if>
       <if test="createTime != null">
         createTime = #{createTime,jdbcType=TIMESTAMP},
@@ -202,9 +202,9 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zm.media.ibs.user.entity.UserCorp">
     update tbl_user_corp
-    set userId = #{userId,jdbcType=VARCHAR},
-      corpId = #{corpId,jdbcType=VARCHAR},
-      createBy = #{createBy,jdbcType=VARCHAR},
+    set userId = #{userId,jdbcType=BIGINT},
+      corpId = #{corpId,jdbcType=BIGINT},
+      createBy = #{createBy,jdbcType=BIGINT},
       createTime = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>

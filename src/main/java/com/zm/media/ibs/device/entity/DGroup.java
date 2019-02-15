@@ -3,36 +3,36 @@ package com.zm.media.ibs.device.entity;
 import java.util.Date;
 
 public class DGroup {
-    private String dgroupId;
+    private Long dgroupId;
 
-    private String corpId;
+    private Long corpId;
 
     private String groupName;
 
-    private String parentId;
+    private Long parentId;
 
-    private String createBy;
+    private Long createBy;
 
     private Date createTime;
 
-    private String updateBy;
+    private Long updateBy;
 
     private Date updateTime;
 
-    public String getDgroupId() {
+    public Long getDgroupId() {
         return dgroupId;
     }
 
-    public void setDgroupId(String dgroupId) {
-        this.dgroupId = dgroupId == null ? null : dgroupId.trim();
+    public void setDgroupId(Long dgroupId) {
+        this.dgroupId = dgroupId;
     }
 
-    public String getCorpId() {
+    public Long getCorpId() {
         return corpId;
     }
 
-    public void setCorpId(String corpId) {
-        this.corpId = corpId == null ? null : corpId.trim();
+    public void setCorpId(Long corpId) {
+        this.corpId = corpId;
     }
 
     public String getGroupName() {
@@ -43,20 +43,20 @@ public class DGroup {
         this.groupName = groupName == null ? null : groupName.trim();
     }
 
-    public String getParentId() {
+    public Long getParentId() {
         return parentId;
     }
 
-    public void setParentId(String parentId) {
-        this.parentId = parentId == null ? null : parentId.trim();
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
-    public String getCreateBy() {
+    public Long getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
     public Date getCreateTime() {
@@ -67,12 +67,12 @@ public class DGroup {
         this.createTime = createTime;
     }
 
-    public String getUpdateBy() {
+    public Long getUpdateBy() {
         return updateBy;
     }
 
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy == null ? null : updateBy.trim();
+    public void setUpdateBy(Long updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Date getUpdateTime() {

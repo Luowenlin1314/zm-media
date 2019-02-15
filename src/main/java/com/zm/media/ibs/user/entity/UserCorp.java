@@ -5,11 +5,11 @@ import java.util.Date;
 public class UserCorp {
     private Long id;
 
-    private String userId;
+    private Long userId;
 
-    private String corpId;
+    private Long corpId;
 
-    private String createBy;
+    private Long createBy;
 
     private Date createTime;
 
@@ -21,28 +21,28 @@ public class UserCorp {
         this.id = id;
     }
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public String getCorpId() {
+    public Long getCorpId() {
         return corpId;
     }
 
-    public void setCorpId(String corpId) {
-        this.corpId = corpId == null ? null : corpId.trim();
+    public void setCorpId(Long corpId) {
+        this.corpId = corpId;
     }
 
-    public String getCreateBy() {
+    public Long getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
     public Date getCreateTime() {

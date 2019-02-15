@@ -3,7 +3,7 @@ package com.zm.media.ibs.user.entity;
 import java.util.Date;
 
 public class Corp {
-    private String corpId;
+    private Long corpId;
 
     private String corpName;
 
@@ -13,20 +13,20 @@ public class Corp {
 
     private String location;
 
-    private String createBy;
+    private Long createBy;
 
-    private String updateBy;
+    private Long updateBy;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public String getCorpId() {
+    public Long getCorpId() {
         return corpId;
     }
 
-    public void setCorpId(String corpId) {
-        this.corpId = corpId == null ? null : corpId.trim();
+    public void setCorpId(Long corpId) {
+        this.corpId = corpId;
     }
 
     public String getCorpName() {
@@ -61,20 +61,20 @@ public class Corp {
         this.location = location == null ? null : location.trim();
     }
 
-    public String getCreateBy() {
+    public Long getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
-    public String getUpdateBy() {
+    public Long getUpdateBy() {
         return updateBy;
     }
 
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy == null ? null : updateBy.trim();
+    public void setUpdateBy(Long updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Date getCreateTime() {

@@ -104,3 +104,12 @@ netty:
   read-idle-time: 15
   write-idle-time: 0
   all-idle-time: 0
+
+#### netty config #################################################################################
+ftp:
+  env: unix
+  host: 172.16.1.103
+  port: 21
+  username: zomu
+  password: zomu.123
+  home: /media

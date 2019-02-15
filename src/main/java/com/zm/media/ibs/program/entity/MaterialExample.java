@@ -115,62 +115,52 @@ public class MaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdEqualTo(String value) {
+        public Criteria andMaterialIdEqualTo(Long value) {
             addCriterion("materialId =", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotEqualTo(String value) {
+        public Criteria andMaterialIdNotEqualTo(Long value) {
             addCriterion("materialId <>", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdGreaterThan(String value) {
+        public Criteria andMaterialIdGreaterThan(Long value) {
             addCriterion("materialId >", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdGreaterThanOrEqualTo(String value) {
+        public Criteria andMaterialIdGreaterThanOrEqualTo(Long value) {
             addCriterion("materialId >=", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLessThan(String value) {
+        public Criteria andMaterialIdLessThan(Long value) {
             addCriterion("materialId <", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLessThanOrEqualTo(String value) {
+        public Criteria andMaterialIdLessThanOrEqualTo(Long value) {
             addCriterion("materialId <=", value, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLike(String value) {
-            addCriterion("materialId like", value, "materialId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaterialIdNotLike(String value) {
-            addCriterion("materialId not like", value, "materialId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaterialIdIn(List<String> values) {
+        public Criteria andMaterialIdIn(List<Long> values) {
             addCriterion("materialId in", values, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotIn(List<String> values) {
+        public Criteria andMaterialIdNotIn(List<Long> values) {
             addCriterion("materialId not in", values, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdBetween(String value1, String value2) {
+        public Criteria andMaterialIdBetween(Long value1, Long value2) {
             addCriterion("materialId between", value1, value2, "materialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotBetween(String value1, String value2) {
+        public Criteria andMaterialIdNotBetween(Long value1, Long value2) {
             addCriterion("materialId not between", value1, value2, "materialId");
             return (Criteria) this;
         }
@@ -185,62 +175,52 @@ public class MaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdEqualTo(String value) {
+        public Criteria andCorpIdEqualTo(Long value) {
             addCriterion("corpId =", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdNotEqualTo(String value) {
+        public Criteria andCorpIdNotEqualTo(Long value) {
             addCriterion("corpId <>", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdGreaterThan(String value) {
+        public Criteria andCorpIdGreaterThan(Long value) {
             addCriterion("corpId >", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdGreaterThanOrEqualTo(String value) {
+        public Criteria andCorpIdGreaterThanOrEqualTo(Long value) {
             addCriterion("corpId >=", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdLessThan(String value) {
+        public Criteria andCorpIdLessThan(Long value) {
             addCriterion("corpId <", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdLessThanOrEqualTo(String value) {
+        public Criteria andCorpIdLessThanOrEqualTo(Long value) {
             addCriterion("corpId <=", value, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdLike(String value) {
-            addCriterion("corpId like", value, "corpId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCorpIdNotLike(String value) {
-            addCriterion("corpId not like", value, "corpId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCorpIdIn(List<String> values) {
+        public Criteria andCorpIdIn(List<Long> values) {
             addCriterion("corpId in", values, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdNotIn(List<String> values) {
+        public Criteria andCorpIdNotIn(List<Long> values) {
             addCriterion("corpId not in", values, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdBetween(String value1, String value2) {
+        public Criteria andCorpIdBetween(Long value1, Long value2) {
             addCriterion("corpId between", value1, value2, "corpId");
             return (Criteria) this;
         }
 
-        public Criteria andCorpIdNotBetween(String value1, String value2) {
+        public Criteria andCorpIdNotBetween(Long value1, Long value2) {
             addCriterion("corpId not between", value1, value2, "corpId");
             return (Criteria) this;
         }
@@ -915,62 +895,52 @@ public class MaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateByEqualTo(String value) {
+        public Criteria andCreateByEqualTo(Long value) {
             addCriterion("createBy =", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotEqualTo(String value) {
+        public Criteria andCreateByNotEqualTo(Long value) {
             addCriterion("createBy <>", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThan(String value) {
+        public Criteria andCreateByGreaterThan(Long value) {
             addCriterion("createBy >", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThanOrEqualTo(String value) {
+        public Criteria andCreateByGreaterThanOrEqualTo(Long value) {
             addCriterion("createBy >=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThan(String value) {
+        public Criteria andCreateByLessThan(Long value) {
             addCriterion("createBy <", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThanOrEqualTo(String value) {
+        public Criteria andCreateByLessThanOrEqualTo(Long value) {
             addCriterion("createBy <=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLike(String value) {
-            addCriterion("createBy like", value, "createBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateByNotLike(String value) {
-            addCriterion("createBy not like", value, "createBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateByIn(List<String> values) {
+        public Criteria andCreateByIn(List<Long> values) {
             addCriterion("createBy in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotIn(List<String> values) {
+        public Criteria andCreateByNotIn(List<Long> values) {
             addCriterion("createBy not in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByBetween(String value1, String value2) {
+        public Criteria andCreateByBetween(Long value1, Long value2) {
             addCriterion("createBy between", value1, value2, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotBetween(String value1, String value2) {
+        public Criteria andCreateByNotBetween(Long value1, Long value2) {
             addCriterion("createBy not between", value1, value2, "createBy");
             return (Criteria) this;
         }
@@ -1045,62 +1015,52 @@ public class MaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andAuditByEqualTo(String value) {
+        public Criteria andAuditByEqualTo(Long value) {
             addCriterion("auditBy =", value, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByNotEqualTo(String value) {
+        public Criteria andAuditByNotEqualTo(Long value) {
             addCriterion("auditBy <>", value, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByGreaterThan(String value) {
+        public Criteria andAuditByGreaterThan(Long value) {
             addCriterion("auditBy >", value, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByGreaterThanOrEqualTo(String value) {
+        public Criteria andAuditByGreaterThanOrEqualTo(Long value) {
             addCriterion("auditBy >=", value, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByLessThan(String value) {
+        public Criteria andAuditByLessThan(Long value) {
             addCriterion("auditBy <", value, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByLessThanOrEqualTo(String value) {
+        public Criteria andAuditByLessThanOrEqualTo(Long value) {
             addCriterion("auditBy <=", value, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByLike(String value) {
-            addCriterion("auditBy like", value, "auditBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuditByNotLike(String value) {
-            addCriterion("auditBy not like", value, "auditBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuditByIn(List<String> values) {
+        public Criteria andAuditByIn(List<Long> values) {
             addCriterion("auditBy in", values, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByNotIn(List<String> values) {
+        public Criteria andAuditByNotIn(List<Long> values) {
             addCriterion("auditBy not in", values, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByBetween(String value1, String value2) {
+        public Criteria andAuditByBetween(Long value1, Long value2) {
             addCriterion("auditBy between", value1, value2, "auditBy");
             return (Criteria) this;
         }
 
-        public Criteria andAuditByNotBetween(String value1, String value2) {
+        public Criteria andAuditByNotBetween(Long value1, Long value2) {
             addCriterion("auditBy not between", value1, value2, "auditBy");
             return (Criteria) this;
         }

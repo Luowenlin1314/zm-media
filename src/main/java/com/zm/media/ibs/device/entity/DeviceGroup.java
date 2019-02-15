@@ -5,11 +5,11 @@ import java.util.Date;
 public class DeviceGroup {
     private Long id;
 
-    private String deviceId;
+    private Long deviceId;
 
-    private String dgroupId;
+    private Long dgroupId;
 
-    private String createBy;
+    private Long createBy;
 
     private Date createTime;
 
@@ -21,28 +21,28 @@ public class DeviceGroup {
         this.id = id;
     }
 
-    public String getDeviceId() {
+    public Long getDeviceId() {
         return deviceId;
     }
 
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId == null ? null : deviceId.trim();
+    public void setDeviceId(Long deviceId) {
+        this.deviceId = deviceId;
     }
 
-    public String getDgroupId() {
+    public Long getDgroupId() {
         return dgroupId;
     }
 
-    public void setDgroupId(String dgroupId) {
-        this.dgroupId = dgroupId == null ? null : dgroupId.trim();
+    public void setDgroupId(Long dgroupId) {
+        this.dgroupId = dgroupId;
     }
 
-    public String getCreateBy() {
+    public Long getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
     public Date getCreateTime() {

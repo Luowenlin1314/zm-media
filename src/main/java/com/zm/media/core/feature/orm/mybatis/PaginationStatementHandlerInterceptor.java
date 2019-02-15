@@ -23,7 +23,7 @@ import java.sql.ResultSet;
 import java.util.Properties;
 
 
-@Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class})})
+@Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class,Integer.class})})
 public class PaginationStatementHandlerInterceptor implements Interceptor {
 
     private static final ObjectFactory DEFAULT_OBJECT_FACTORY = new DefaultObjectFactory();

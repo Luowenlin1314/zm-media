@@ -3,9 +3,9 @@ package com.zm.media.ibs.program.entity;
 import java.util.Date;
 
 public class Material {
-    private String materialId;
+    private Long materialId;
 
-    private String corpId;
+    private Long corpId;
 
     private String md5;
 
@@ -27,28 +27,28 @@ public class Material {
 
     private String remark;
 
-    private String createBy;
+    private Long createBy;
 
     private Date createTime;
 
-    private String auditBy;
+    private Long auditBy;
 
     private Date auditTime;
 
-    public String getMaterialId() {
+    public Long getMaterialId() {
         return materialId;
     }
 
-    public void setMaterialId(String materialId) {
-        this.materialId = materialId == null ? null : materialId.trim();
+    public void setMaterialId(Long materialId) {
+        this.materialId = materialId;
     }
 
-    public String getCorpId() {
+    public Long getCorpId() {
         return corpId;
     }
 
-    public void setCorpId(String corpId) {
-        this.corpId = corpId == null ? null : corpId.trim();
+    public void setCorpId(Long corpId) {
+        this.corpId = corpId;
     }
 
     public String getMd5() {
@@ -131,12 +131,12 @@ public class Material {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public String getCreateBy() {
+    public Long getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
     public Date getCreateTime() {
@@ -147,12 +147,12 @@ public class Material {
         this.createTime = createTime;
     }
 
-    public String getAuditBy() {
+    public Long getAuditBy() {
         return auditBy;
     }
 
-    public void setAuditBy(String auditBy) {
-        this.auditBy = auditBy == null ? null : auditBy.trim();
+    public void setAuditBy(Long auditBy) {
+        this.auditBy = auditBy;
     }
 
     public Date getAuditTime() {
