@@ -6,6 +6,9 @@ package com.zm.media.ibs.protocol.constant;
  */
 public interface ProtocolCons {
 
+    /********心跳************/
+    Integer TERMINAL_HEARTBEAT = 100;
+
     /********终端相关************/
     //终端身份校验
     Integer TERMINAL_IDENTITY = 1001;
@@ -15,5 +18,5 @@ public interface ProtocolCons {
     Integer TERMINAL_IDENTITY_SUCCESS = 10011;
 
     /********节目相关************/
-
+    Integer PROGRAM_UPDATE = 2001;
 }

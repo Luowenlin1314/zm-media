@@ -49,7 +49,7 @@ CREATE TABLE `tbl_user` (
   `userName` varchar(64) NOT NULL COMMENT '名称',
   `gender` int(1) NOT NULL DEFAULT '0' COMMENT '0男1女',
   `avatar` varchar(128) DEFAULT NULL COMMENT '头像url',
-  `status` int(1) NOT NULL DEFAULT '1' COMMENT '激活状态: 1=已激活，2=已禁用',
+  `status` int(1) NOT NULL DEFAULT '0' COMMENT '游离状态、1禁止、2普通、3管理员、4创始人',
   `createtime` datetime NOT NULL COMMENT '创建时间',
   `updatetime` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`userId`),

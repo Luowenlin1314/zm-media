@@ -5,8 +5,8 @@
     <id column="programId" jdbcType="BIGINT" property="programId" />
     <result column="corpId" jdbcType="BIGINT" property="corpId" />
     <result column="programName" jdbcType="VARCHAR" property="programName" />
-    <result column="type" jdbcType="INTEGER" property="type" />
-    <result column="size" jdbcType="DOUBLE" property="size" />
+    <result column="ptype" jdbcType="INTEGER" property="ptype" />
+    <result column="psize" jdbcType="DOUBLE" property="psize" />
     <result column="duration" jdbcType="INTEGER" property="duration" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
@@ -74,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    programId, corpId, programName, type, size, duration, status, remark, createBy, createTime, 
-    updateBy, updateTime
+    programId, corpId, programName, ptype, psize, duration, status, remark, createBy, 
+    createTime, updateBy, updateTime
   </sql>
   <select id="selectByExample" parameterType="com.zm.media.ibs.program.entity.ProgramExample" resultMap="BaseResultMap">
     select
@@ -109,12 +109,12 @@
   </delete>
   <insert id="insert" parameterType="com.zm.media.ibs.program.entity.Program">
     insert into tbl_program (programId, corpId, programName, 
-      type, size, duration, 
+      ptype, psize, duration, 
       status, remark, createBy, 
       createTime, updateBy, updateTime
       )
     values (#{programId,jdbcType=BIGINT}, #{corpId,jdbcType=BIGINT}, #{programName,jdbcType=VARCHAR}, 
-      #{type,jdbcType=INTEGER}, #{size,jdbcType=DOUBLE}, #{duration,jdbcType=INTEGER}, 
+      #{ptype,jdbcType=INTEGER}, #{psize,jdbcType=DOUBLE}, #{duration,jdbcType=INTEGER}, 
       #{status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=BIGINT}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}
       )
@@ -131,11 +131,11 @@
       <if test="programName != null">
         programName,
       </if>
-      <if test="type != null">
-        type,
+      <if test="ptype != null">
+        ptype,
       </if>
-      <if test="size != null">
-        size,
+      <if test="psize != null">
+        psize,
       </if>
       <if test="duration != null">
         duration,
@@ -169,11 +169,11 @@
       <if test="programName != null">
         #{programName,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        #{type,jdbcType=INTEGER},
+      <if test="ptype != null">
+        #{ptype,jdbcType=INTEGER},
       </if>
-      <if test="size != null">
-        #{size,jdbcType=DOUBLE},
+      <if test="psize != null">
+        #{psize,jdbcType=DOUBLE},
       </if>
       <if test="duration != null">
         #{duration,jdbcType=INTEGER},
@@ -216,11 +216,11 @@
       <if test="record.programName != null">
         programName = #{record.programName,jdbcType=VARCHAR},
       </if>
-      <if test="record.type != null">
-        type = #{record.type,jdbcType=INTEGER},
+      <if test="record.ptype != null">
+        ptype = #{record.ptype,jdbcType=INTEGER},
       </if>
-      <if test="record.size != null">
-        size = #{record.size,jdbcType=DOUBLE},
+      <if test="record.psize != null">
+        psize = #{record.psize,jdbcType=DOUBLE},
       </if>
       <if test="record.duration != null">
         duration = #{record.duration,jdbcType=INTEGER},
@@ -253,8 +253,8 @@
     set programId = #{record.programId,jdbcType=BIGINT},
       corpId = #{record.corpId,jdbcType=BIGINT},
       programName = #{record.programName,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=INTEGER},
-      size = #{record.size,jdbcType=DOUBLE},
+      ptype = #{record.ptype,jdbcType=INTEGER},
+      psize = #{record.psize,jdbcType=DOUBLE},
       duration = #{record.duration,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       remark = #{record.remark,jdbcType=VARCHAR},
@@ -275,11 +275,11 @@
       <if test="programName != null">
         programName = #{programName,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        type = #{type,jdbcType=INTEGER},
+      <if test="ptype != null">
+        ptype = #{ptype,jdbcType=INTEGER},
       </if>
-      <if test="size != null">
-        size = #{size,jdbcType=DOUBLE},
+      <if test="psize != null">
+        psize = #{psize,jdbcType=DOUBLE},
       </if>
       <if test="duration != null">
         duration = #{duration,jdbcType=INTEGER},
@@ -309,8 +309,8 @@
     update tbl_program
     set corpId = #{corpId,jdbcType=BIGINT},
       programName = #{programName,jdbcType=VARCHAR},
-      type = #{type,jdbcType=INTEGER},
-      size = #{size,jdbcType=DOUBLE},
+      ptype = #{ptype,jdbcType=INTEGER},
+      psize = #{psize,jdbcType=DOUBLE},
       duration = #{duration,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR},
@@ -320,5 +320,6 @@
       updateTime = #{updateTime,jdbcType=TIMESTAMP}
     where programId = #{programId,jdbcType=BIGINT}
   </update>
+
 
 </mapper>

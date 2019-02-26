@@ -35,13 +35,22 @@ public class MessageDispatchHandler {
             //终端身份校验
             if(name.equals(ProtocolCons.TERMINAL_IDENTITY)){
                 terminalIdentityHandler.handler(ctx,basePro);
+            }else if(name.equals(ProtocolCons.TERMINAL_HEARTBEAT)){
+                logger.error("心跳：" + ctx.channel().remoteAddress());
             }
             else{
                 logger.error("未知协议：" + msg);
             }
         }catch (Exception e){
             logger.error("消息转换异常：" + msg);
+            ctx.channel().close();
         }
+    }
+
+    public static void main(String[] args) {
+        String json = "{\"data\":{\"deviceCode\":\"632d9147-34ec-419a-9ede-ed112481dd7e\",\"netIP\":\"test\",\"netMac\":\"test\",\"netType\":1,\"resolution\":\"test\",\"version\":\"6.0.1\"},\"name\":1001}";
+        BasePro basePro = JacksonUtils.json2Pojo(json, BasePro.class);
+        System.out.println(basePro.getName());
     }
 
 }

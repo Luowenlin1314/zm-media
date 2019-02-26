@@ -27,6 +27,7 @@ public class MessageReceivedHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
         super.channelRegistered(ctx);
+        logger.info("终端连接:"+ctx.channel().remoteAddress());
     }
 
     @Override

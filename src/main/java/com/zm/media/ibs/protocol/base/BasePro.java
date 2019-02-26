@@ -31,6 +31,14 @@ public class BasePro {
         return JacksonUtils.pojo2Json(this);
     }
 
+    public void setName(Integer name) {
+        this.name = name;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
     public static void main(String[] args) {
         Identity identity = new Identity();
         identity.setCorpCode("aaaa");

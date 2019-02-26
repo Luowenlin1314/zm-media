@@ -365,123 +365,123 @@ public class MaterialExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andMtypeIsNull() {
+            addCriterion("mtype is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andMtypeIsNotNull() {
+            addCriterion("mtype is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Integer value) {
-            addCriterion("type =", value, "type");
+        public Criteria andMtypeEqualTo(Integer value) {
+            addCriterion("mtype =", value, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Integer value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andMtypeNotEqualTo(Integer value) {
+            addCriterion("mtype <>", value, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Integer value) {
-            addCriterion("type >", value, "type");
+        public Criteria andMtypeGreaterThan(Integer value) {
+            addCriterion("mtype >", value, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andMtypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("mtype >=", value, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Integer value) {
-            addCriterion("type <", value, "type");
+        public Criteria andMtypeLessThan(Integer value) {
+            addCriterion("mtype <", value, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andMtypeLessThanOrEqualTo(Integer value) {
+            addCriterion("mtype <=", value, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Integer> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andMtypeIn(List<Integer> values) {
+            addCriterion("mtype in", values, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Integer> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andMtypeNotIn(List<Integer> values) {
+            addCriterion("mtype not in", values, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Integer value1, Integer value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andMtypeBetween(Integer value1, Integer value2) {
+            addCriterion("mtype between", value1, value2, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andMtypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("mtype not between", value1, value2, "mtype");
             return (Criteria) this;
         }
 
-        public Criteria andSizeIsNull() {
-            addCriterion("size is null");
+        public Criteria andMsizeIsNull() {
+            addCriterion("msize is null");
             return (Criteria) this;
         }
 
-        public Criteria andSizeIsNotNull() {
-            addCriterion("size is not null");
+        public Criteria andMsizeIsNotNull() {
+            addCriterion("msize is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSizeEqualTo(Integer value) {
-            addCriterion("size =", value, "size");
+        public Criteria andMsizeEqualTo(Integer value) {
+            addCriterion("msize =", value, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeNotEqualTo(Integer value) {
-            addCriterion("size <>", value, "size");
+        public Criteria andMsizeNotEqualTo(Integer value) {
+            addCriterion("msize <>", value, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeGreaterThan(Integer value) {
-            addCriterion("size >", value, "size");
+        public Criteria andMsizeGreaterThan(Integer value) {
+            addCriterion("msize >", value, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("size >=", value, "size");
+        public Criteria andMsizeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("msize >=", value, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeLessThan(Integer value) {
-            addCriterion("size <", value, "size");
+        public Criteria andMsizeLessThan(Integer value) {
+            addCriterion("msize <", value, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeLessThanOrEqualTo(Integer value) {
-            addCriterion("size <=", value, "size");
+        public Criteria andMsizeLessThanOrEqualTo(Integer value) {
+            addCriterion("msize <=", value, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeIn(List<Integer> values) {
-            addCriterion("size in", values, "size");
+        public Criteria andMsizeIn(List<Integer> values) {
+            addCriterion("msize in", values, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeNotIn(List<Integer> values) {
-            addCriterion("size not in", values, "size");
+        public Criteria andMsizeNotIn(List<Integer> values) {
+            addCriterion("msize not in", values, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeBetween(Integer value1, Integer value2) {
-            addCriterion("size between", value1, value2, "size");
+        public Criteria andMsizeBetween(Integer value1, Integer value2) {
+            addCriterion("msize between", value1, value2, "msize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeNotBetween(Integer value1, Integer value2) {
-            addCriterion("size not between", value1, value2, "size");
+        public Criteria andMsizeNotBetween(Integer value1, Integer value2) {
+            addCriterion("msize not between", value1, value2, "msize");
             return (Criteria) this;
         }
 

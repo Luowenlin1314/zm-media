@@ -8,6 +8,8 @@
     <result column="gender" jdbcType="INTEGER" property="gender" />
     <result column="avatar" jdbcType="VARCHAR" property="avatar" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="corpId" jdbcType="BIGINT" property="corpId" />
+    <result column="roleId" jdbcType="BIGINT" property="roleId" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
   </resultMap>
@@ -70,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    userId, mobile, userName, gender, avatar, status, createtime, updatetime
+    userId, mobile, userName, gender, avatar, status, corpId, roleId, createtime, updatetime
   </sql>
   <select id="selectByExample" parameterType="com.zm.media.ibs.user.entity.UserExample" resultMap="BaseResultMap">
     select
@@ -105,10 +107,12 @@
   <insert id="insert" parameterType="com.zm.media.ibs.user.entity.User">
     insert into tbl_user (userId, mobile, userName, 
       gender, avatar, status, 
-      createtime, updatetime)
+      corpId, roleId, createtime, 
+      updatetime)
     values (#{userId,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
       #{gender,jdbcType=INTEGER}, #{avatar,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+      #{corpId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.zm.media.ibs.user.entity.User">
     insert into tbl_user
@@ -130,6 +134,12 @@
       </if>
       <if test="status != null">
         status,
+      </if>
+      <if test="corpId != null">
+        corpId,
+      </if>
+      <if test="roleId != null">
+        roleId,
       </if>
       <if test="createtime != null">
         createtime,
@@ -156,6 +166,12 @@
       </if>
       <if test="status != null">
         #{status,jdbcType=INTEGER},
+      </if>
+      <if test="corpId != null">
+        #{corpId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
       </if>
       <if test="createtime != null">
         #{createtime,jdbcType=TIMESTAMP},
@@ -192,6 +208,12 @@
       <if test="record.status != null">
         status = #{record.status,jdbcType=INTEGER},
       </if>
+      <if test="record.corpId != null">
+        corpId = #{record.corpId,jdbcType=BIGINT},
+      </if>
+      <if test="record.roleId != null">
+        roleId = #{record.roleId,jdbcType=BIGINT},
+      </if>
       <if test="record.createtime != null">
         createtime = #{record.createtime,jdbcType=TIMESTAMP},
       </if>
@@ -211,6 +233,8 @@
       gender = #{record.gender,jdbcType=INTEGER},
       avatar = #{record.avatar,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
+      corpId = #{record.corpId,jdbcType=BIGINT},
+      roleId = #{record.roleId,jdbcType=BIGINT},
       createtime = #{record.createtime,jdbcType=TIMESTAMP},
       updatetime = #{record.updatetime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
@@ -235,6 +259,12 @@
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
       </if>
+      <if test="corpId != null">
+        corpId = #{corpId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        roleId = #{roleId,jdbcType=BIGINT},
+      </if>
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=TIMESTAMP},
       </if>
@@ -251,9 +281,12 @@
       gender = #{gender,jdbcType=INTEGER},
       avatar = #{avatar,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
+      corpId = #{corpId,jdbcType=BIGINT},
+      roleId = #{roleId,jdbcType=BIGINT},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where userId = #{userId,jdbcType=BIGINT}
   </update>
+
 
 </mapper>

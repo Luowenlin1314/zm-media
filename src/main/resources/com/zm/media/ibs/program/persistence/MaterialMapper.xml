@@ -6,8 +6,8 @@
     <result column="corpId" jdbcType="BIGINT" property="corpId" />
     <result column="md5" jdbcType="VARCHAR" property="md5" />
     <result column="materialName" jdbcType="VARCHAR" property="materialName" />
-    <result column="type" jdbcType="INTEGER" property="type" />
-    <result column="size" jdbcType="INTEGER" property="size" />
+    <result column="mtype" jdbcType="INTEGER" property="mtype" />
+    <result column="msize" jdbcType="INTEGER" property="msize" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="duration" jdbcType="BIGINT" property="duration" />
     <result column="standard" jdbcType="VARCHAR" property="standard" />
@@ -78,8 +78,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    materialId, corpId, md5, materialName, type, size, status, duration, standard, relativePath, 
-    thumbnailPath, remark, createBy, createTime, auditBy, auditTime
+    materialId, corpId, md5, materialName, mtype, msize, status, duration, standard, 
+    relativePath, thumbnailPath, remark, createBy, createTime, auditBy, auditTime
   </sql>
   <select id="selectByExample" parameterType="com.zm.media.ibs.program.entity.MaterialExample" resultMap="BaseResultMap">
     select
@@ -113,13 +113,13 @@
   </delete>
   <insert id="insert" parameterType="com.zm.media.ibs.program.entity.Material">
     insert into tbl_material (materialId, corpId, md5, 
-      materialName, type, size, 
+      materialName, mtype, msize, 
       status, duration, standard, 
       relativePath, thumbnailPath, remark, 
       createBy, createTime, auditBy, 
       auditTime)
     values (#{materialId,jdbcType=BIGINT}, #{corpId,jdbcType=BIGINT}, #{md5,jdbcType=VARCHAR}, 
-      #{materialName,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{size,jdbcType=INTEGER}, 
+      #{materialName,jdbcType=VARCHAR}, #{mtype,jdbcType=INTEGER}, #{msize,jdbcType=INTEGER}, 
       #{status,jdbcType=INTEGER}, #{duration,jdbcType=BIGINT}, #{standard,jdbcType=VARCHAR}, 
       #{relativePath,jdbcType=VARCHAR}, #{thumbnailPath,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
       #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{auditBy,jdbcType=BIGINT}, 
@@ -140,11 +140,11 @@
       <if test="materialName != null">
         materialName,
       </if>
-      <if test="type != null">
-        type,
+      <if test="mtype != null">
+        mtype,
       </if>
-      <if test="size != null">
-        size,
+      <if test="msize != null">
+        msize,
       </if>
       <if test="status != null">
         status,
@@ -190,11 +190,11 @@
       <if test="materialName != null">
         #{materialName,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        #{type,jdbcType=INTEGER},
+      <if test="mtype != null">
+        #{mtype,jdbcType=INTEGER},
       </if>
-      <if test="size != null">
-        #{size,jdbcType=INTEGER},
+      <if test="msize != null">
+        #{msize,jdbcType=INTEGER},
       </if>
       <if test="status != null">
         #{status,jdbcType=INTEGER},
@@ -249,11 +249,11 @@
       <if test="record.materialName != null">
         materialName = #{record.materialName,jdbcType=VARCHAR},
       </if>
-      <if test="record.type != null">
-        type = #{record.type,jdbcType=INTEGER},
+      <if test="record.mtype != null">
+        mtype = #{record.mtype,jdbcType=INTEGER},
       </if>
-      <if test="record.size != null">
-        size = #{record.size,jdbcType=INTEGER},
+      <if test="record.msize != null">
+        msize = #{record.msize,jdbcType=INTEGER},
       </if>
       <if test="record.status != null">
         status = #{record.status,jdbcType=INTEGER},
@@ -296,8 +296,8 @@
       corpId = #{record.corpId,jdbcType=BIGINT},
       md5 = #{record.md5,jdbcType=VARCHAR},
       materialName = #{record.materialName,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=INTEGER},
-      size = #{record.size,jdbcType=INTEGER},
+      mtype = #{record.mtype,jdbcType=INTEGER},
+      msize = #{record.msize,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       duration = #{record.duration,jdbcType=BIGINT},
       standard = #{record.standard,jdbcType=VARCHAR},
@@ -324,11 +324,11 @@
       <if test="materialName != null">
         materialName = #{materialName,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        type = #{type,jdbcType=INTEGER},
+      <if test="mtype != null">
+        mtype = #{mtype,jdbcType=INTEGER},
       </if>
-      <if test="size != null">
-        size = #{size,jdbcType=INTEGER},
+      <if test="msize != null">
+        msize = #{msize,jdbcType=INTEGER},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
@@ -368,8 +368,8 @@
     set corpId = #{corpId,jdbcType=BIGINT},
       md5 = #{md5,jdbcType=VARCHAR},
       materialName = #{materialName,jdbcType=VARCHAR},
-      type = #{type,jdbcType=INTEGER},
-      size = #{size,jdbcType=INTEGER},
+      mtype = #{mtype,jdbcType=INTEGER},
+      msize = #{msize,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       duration = #{duration,jdbcType=BIGINT},
       standard = #{standard,jdbcType=VARCHAR},
@@ -382,5 +382,6 @@
       auditTime = #{auditTime,jdbcType=TIMESTAMP}
     where materialId = #{materialId,jdbcType=BIGINT}
   </update>
+
 
 </mapper>

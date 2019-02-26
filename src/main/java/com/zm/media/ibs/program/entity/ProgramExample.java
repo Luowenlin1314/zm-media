@@ -295,123 +295,123 @@ public class ProgramExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andPtypeIsNull() {
+            addCriterion("ptype is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andPtypeIsNotNull() {
+            addCriterion("ptype is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Integer value) {
-            addCriterion("type =", value, "type");
+        public Criteria andPtypeEqualTo(Integer value) {
+            addCriterion("ptype =", value, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Integer value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andPtypeNotEqualTo(Integer value) {
+            addCriterion("ptype <>", value, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Integer value) {
-            addCriterion("type >", value, "type");
+        public Criteria andPtypeGreaterThan(Integer value) {
+            addCriterion("ptype >", value, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andPtypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("ptype >=", value, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Integer value) {
-            addCriterion("type <", value, "type");
+        public Criteria andPtypeLessThan(Integer value) {
+            addCriterion("ptype <", value, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andPtypeLessThanOrEqualTo(Integer value) {
+            addCriterion("ptype <=", value, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Integer> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andPtypeIn(List<Integer> values) {
+            addCriterion("ptype in", values, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Integer> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andPtypeNotIn(List<Integer> values) {
+            addCriterion("ptype not in", values, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Integer value1, Integer value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andPtypeBetween(Integer value1, Integer value2) {
+            addCriterion("ptype between", value1, value2, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andPtypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("ptype not between", value1, value2, "ptype");
             return (Criteria) this;
         }
 
-        public Criteria andSizeIsNull() {
-            addCriterion("size is null");
+        public Criteria andPsizeIsNull() {
+            addCriterion("psize is null");
             return (Criteria) this;
         }
 
-        public Criteria andSizeIsNotNull() {
-            addCriterion("size is not null");
+        public Criteria andPsizeIsNotNull() {
+            addCriterion("psize is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSizeEqualTo(Double value) {
-            addCriterion("size =", value, "size");
+        public Criteria andPsizeEqualTo(Double value) {
+            addCriterion("psize =", value, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeNotEqualTo(Double value) {
-            addCriterion("size <>", value, "size");
+        public Criteria andPsizeNotEqualTo(Double value) {
+            addCriterion("psize <>", value, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeGreaterThan(Double value) {
-            addCriterion("size >", value, "size");
+        public Criteria andPsizeGreaterThan(Double value) {
+            addCriterion("psize >", value, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeGreaterThanOrEqualTo(Double value) {
-            addCriterion("size >=", value, "size");
+        public Criteria andPsizeGreaterThanOrEqualTo(Double value) {
+            addCriterion("psize >=", value, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeLessThan(Double value) {
-            addCriterion("size <", value, "size");
+        public Criteria andPsizeLessThan(Double value) {
+            addCriterion("psize <", value, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeLessThanOrEqualTo(Double value) {
-            addCriterion("size <=", value, "size");
+        public Criteria andPsizeLessThanOrEqualTo(Double value) {
+            addCriterion("psize <=", value, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeIn(List<Double> values) {
-            addCriterion("size in", values, "size");
+        public Criteria andPsizeIn(List<Double> values) {
+            addCriterion("psize in", values, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeNotIn(List<Double> values) {
-            addCriterion("size not in", values, "size");
+        public Criteria andPsizeNotIn(List<Double> values) {
+            addCriterion("psize not in", values, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeBetween(Double value1, Double value2) {
-            addCriterion("size between", value1, value2, "size");
+        public Criteria andPsizeBetween(Double value1, Double value2) {
+            addCriterion("psize between", value1, value2, "psize");
             return (Criteria) this;
         }
 
-        public Criteria andSizeNotBetween(Double value1, Double value2) {
-            addCriterion("size not between", value1, value2, "size");
+        public Criteria andPsizeNotBetween(Double value1, Double value2) {
+            addCriterion("psize not between", value1, value2, "psize");
             return (Criteria) this;
         }
 

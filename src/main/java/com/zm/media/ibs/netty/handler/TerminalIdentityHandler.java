@@ -9,6 +9,7 @@ import com.zm.media.ibs.device.service.DeviceService;
 import com.zm.media.ibs.netty.handler.base.BaseHandler;
 import com.zm.media.ibs.netty.handler.container.TerminalContainer;
 import com.zm.media.ibs.protocol.base.BasePro;
+import com.zm.media.ibs.protocol.constant.ProtocolCons;
 import com.zm.media.ibs.protocol.entity.Identity;
 import com.zm.media.ibs.user.entity.Corp;
 import com.zm.media.ibs.user.service.CorpService;
@@ -46,7 +47,10 @@ public class TerminalIdentityHandler extends BaseHandler{
         Device device = deviceService.getByDeviceCode(identity.getDeviceCode());
         if(device != null){
             addTerminal(device.getDeviceId(),ctx);
-            ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("success", CharsetUtil.UTF_8));
+            BasePro result = new BasePro();
+            result.setName(ProtocolCons.TERMINAL_IDENTITY_SUCCESS);
+            result.setData("success");
+            ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer(result.toJson(), CharsetUtil.UTF_8));
             ctx.writeAndFlush(msg.duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             return;
         }
@@ -55,7 +59,10 @@ public class TerminalIdentityHandler extends BaseHandler{
         String corpCode = identity.getCorpCode();
         Corp corp = corpService.getByCode(corpCode);
         if(corp == null){
-            ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("fail", CharsetUtil.UTF_8));
+            BasePro result = new BasePro();
+            result.setName(ProtocolCons.TERMINAL_IDENTITY_FAIL);
+            result.setData("fail");
+            ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer(result.toJson(), CharsetUtil.UTF_8));
             ctx.writeAndFlush(msg.duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             return;
         }
@@ -75,7 +82,10 @@ public class TerminalIdentityHandler extends BaseHandler{
         deviceCorpService.addDeviceCorp(deviceCorp);
 
         addTerminal(device.getDeviceId(),ctx);
-        ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("success", CharsetUtil.UTF_8));
+        BasePro result = new BasePro();
+        result.setName(ProtocolCons.TERMINAL_IDENTITY_SUCCESS);
+        result.setData("success");
+        ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer(result.toJson(), CharsetUtil.UTF_8));
         ctx.writeAndFlush(msg.duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
     }
 

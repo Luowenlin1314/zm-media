@@ -11,9 +11,9 @@ public class Material {
 
     private String materialName;
 
-    private Integer type;
+    private Integer mtype;
 
-    private Integer size;
+    private Integer msize;
 
     private Integer status;
 
@@ -67,20 +67,20 @@ public class Material {
         this.materialName = materialName == null ? null : materialName.trim();
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getMtype() {
+        return mtype;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setMtype(Integer mtype) {
+        this.mtype = mtype;
     }
 
-    public Integer getSize() {
-        return size;
+    public Integer getMsize() {
+        return msize;
     }
 
-    public void setSize(Integer size) {
-        this.size = size;
+    public void setMsize(Integer msize) {
+        this.msize = msize;
     }
 
     public Integer getStatus() {

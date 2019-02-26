@@ -495,6 +495,126 @@ public class UserExample {
             return (Criteria) this;
         }
 
+        public Criteria andCorpIdIsNull() {
+            addCriterion("corpId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdIsNotNull() {
+            addCriterion("corpId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdEqualTo(Long value) {
+            addCriterion("corpId =", value, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdNotEqualTo(Long value) {
+            addCriterion("corpId <>", value, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdGreaterThan(Long value) {
+            addCriterion("corpId >", value, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("corpId >=", value, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdLessThan(Long value) {
+            addCriterion("corpId <", value, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdLessThanOrEqualTo(Long value) {
+            addCriterion("corpId <=", value, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdIn(List<Long> values) {
+            addCriterion("corpId in", values, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdNotIn(List<Long> values) {
+            addCriterion("corpId not in", values, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdBetween(Long value1, Long value2) {
+            addCriterion("corpId between", value1, value2, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCorpIdNotBetween(Long value1, Long value2) {
+            addCriterion("corpId not between", value1, value2, "corpId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdIsNull() {
+            addCriterion("roleId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdIsNotNull() {
+            addCriterion("roleId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdEqualTo(Long value) {
+            addCriterion("roleId =", value, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdNotEqualTo(Long value) {
+            addCriterion("roleId <>", value, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdGreaterThan(Long value) {
+            addCriterion("roleId >", value, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("roleId >=", value, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdLessThan(Long value) {
+            addCriterion("roleId <", value, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdLessThanOrEqualTo(Long value) {
+            addCriterion("roleId <=", value, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdIn(List<Long> values) {
+            addCriterion("roleId in", values, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdNotIn(List<Long> values) {
+            addCriterion("roleId not in", values, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdBetween(Long value1, Long value2) {
+            addCriterion("roleId between", value1, value2, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoleIdNotBetween(Long value1, Long value2) {
+            addCriterion("roleId not between", value1, value2, "roleId");
+            return (Criteria) this;
+        }
+
         public Criteria andCreatetimeIsNull() {
             addCriterion("createtime is null");
             return (Criteria) this;

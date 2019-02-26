@@ -15,6 +15,10 @@ public class User {
 
     private Integer status;
 
+    private Long corpId;
+
+    private Long roleId;
+
     private Date createtime;
 
     private Date updatetime;
@@ -65,6 +69,22 @@ public class User {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Long getCorpId() {
+        return corpId;
+    }
+
+    public void setCorpId(Long corpId) {
+        this.corpId = corpId;
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
     public Date getCreatetime() {

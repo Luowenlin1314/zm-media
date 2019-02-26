@@ -5,16 +5,16 @@
     <id column="elementId" jdbcType="BIGINT" property="elementId" />
     <result column="programId" jdbcType="BIGINT" property="programId" />
     <result column="elementName" jdbcType="VARCHAR" property="elementName" />
-    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="etype" jdbcType="INTEGER" property="etype" />
     <result column="background" jdbcType="VARCHAR" property="background" />
-    <result column="left" jdbcType="INTEGER" property="left" />
-    <result column="top" jdbcType="INTEGER" property="top" />
-    <result column="width" jdbcType="INTEGER" property="width" />
-    <result column="height" jdbcType="INTEGER" property="height" />
-    <result column="index" jdbcType="INTEGER" property="index" />
+    <result column="eleft" jdbcType="INTEGER" property="eleft" />
+    <result column="etop" jdbcType="INTEGER" property="etop" />
+    <result column="ewidth" jdbcType="INTEGER" property="ewidth" />
+    <result column="eheight" jdbcType="INTEGER" property="eheight" />
+    <result column="eindex" jdbcType="INTEGER" property="eindex" />
     <result column="duration" jdbcType="INTEGER" property="duration" />
     <result column="effect" jdbcType="INTEGER" property="effect" />
-    <result column="mode" jdbcType="INTEGER" property="mode" />
+    <result column="emode" jdbcType="INTEGER" property="emode" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -76,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    elementId, programId, elementName, type, background, left, top, width, height, index, 
-    duration, effect, mode, remark
+    elementId, programId, elementName, etype, background, eleft, etop, ewidth, eheight, 
+    eindex, duration, effect, emode, remark
   </sql>
   <select id="selectByExample" parameterType="com.zm.media.ibs.program.entity.ElementExample" resultMap="BaseResultMap">
     select
@@ -111,15 +111,15 @@
   </delete>
   <insert id="insert" parameterType="com.zm.media.ibs.program.entity.Element">
     insert into tbl_element (elementId, programId, elementName, 
-      type, background, left, 
-      top, width, height, 
-      index, duration, effect, 
-      mode, remark)
+      etype, background, eleft, 
+      etop, ewidth, eheight, 
+      eindex, duration, effect, 
+      emode, remark)
     values (#{elementId,jdbcType=BIGINT}, #{programId,jdbcType=BIGINT}, #{elementName,jdbcType=VARCHAR}, 
-      #{type,jdbcType=INTEGER}, #{background,jdbcType=VARCHAR}, #{left,jdbcType=INTEGER}, 
-      #{top,jdbcType=INTEGER}, #{width,jdbcType=INTEGER}, #{height,jdbcType=INTEGER}, 
-      #{index,jdbcType=INTEGER}, #{duration,jdbcType=INTEGER}, #{effect,jdbcType=INTEGER}, 
-      #{mode,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+      #{etype,jdbcType=INTEGER}, #{background,jdbcType=VARCHAR}, #{eleft,jdbcType=INTEGER}, 
+      #{etop,jdbcType=INTEGER}, #{ewidth,jdbcType=INTEGER}, #{eheight,jdbcType=INTEGER}, 
+      #{eindex,jdbcType=INTEGER}, #{duration,jdbcType=INTEGER}, #{effect,jdbcType=INTEGER}, 
+      #{emode,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zm.media.ibs.program.entity.Element">
     insert into tbl_element
@@ -133,26 +133,26 @@
       <if test="elementName != null">
         elementName,
       </if>
-      <if test="type != null">
-        type,
+      <if test="etype != null">
+        etype,
       </if>
       <if test="background != null">
         background,
       </if>
-      <if test="left != null">
-        left,
+      <if test="eleft != null">
+        eleft,
       </if>
-      <if test="top != null">
-        top,
+      <if test="etop != null">
+        etop,
       </if>
-      <if test="width != null">
-        width,
+      <if test="ewidth != null">
+        ewidth,
       </if>
-      <if test="height != null">
-        height,
+      <if test="eheight != null">
+        eheight,
       </if>
-      <if test="index != null">
-        index,
+      <if test="eindex != null">
+        eindex,
       </if>
       <if test="duration != null">
         duration,
@@ -160,8 +160,8 @@
       <if test="effect != null">
         effect,
       </if>
-      <if test="mode != null">
-        mode,
+      <if test="emode != null">
+        emode,
       </if>
       <if test="remark != null">
         remark,
@@ -177,26 +177,26 @@
       <if test="elementName != null">
         #{elementName,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        #{type,jdbcType=INTEGER},
+      <if test="etype != null">
+        #{etype,jdbcType=INTEGER},
       </if>
       <if test="background != null">
         #{background,jdbcType=VARCHAR},
       </if>
-      <if test="left != null">
-        #{left,jdbcType=INTEGER},
+      <if test="eleft != null">
+        #{eleft,jdbcType=INTEGER},
       </if>
-      <if test="top != null">
-        #{top,jdbcType=INTEGER},
+      <if test="etop != null">
+        #{etop,jdbcType=INTEGER},
       </if>
-      <if test="width != null">
-        #{width,jdbcType=INTEGER},
+      <if test="ewidth != null">
+        #{ewidth,jdbcType=INTEGER},
       </if>
-      <if test="height != null">
-        #{height,jdbcType=INTEGER},
+      <if test="eheight != null">
+        #{eheight,jdbcType=INTEGER},
       </if>
-      <if test="index != null">
-        #{index,jdbcType=INTEGER},
+      <if test="eindex != null">
+        #{eindex,jdbcType=INTEGER},
       </if>
       <if test="duration != null">
         #{duration,jdbcType=INTEGER},
@@ -204,8 +204,8 @@
       <if test="effect != null">
         #{effect,jdbcType=INTEGER},
       </if>
-      <if test="mode != null">
-        #{mode,jdbcType=INTEGER},
+      <if test="emode != null">
+        #{emode,jdbcType=INTEGER},
       </if>
       <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
@@ -230,26 +230,26 @@
       <if test="record.elementName != null">
         elementName = #{record.elementName,jdbcType=VARCHAR},
       </if>
-      <if test="record.type != null">
-        type = #{record.type,jdbcType=INTEGER},
+      <if test="record.etype != null">
+        etype = #{record.etype,jdbcType=INTEGER},
       </if>
       <if test="record.background != null">
         background = #{record.background,jdbcType=VARCHAR},
       </if>
-      <if test="record.left != null">
-        left = #{record.left,jdbcType=INTEGER},
+      <if test="record.eleft != null">
+        eleft = #{record.eleft,jdbcType=INTEGER},
       </if>
-      <if test="record.top != null">
-        top = #{record.top,jdbcType=INTEGER},
+      <if test="record.etop != null">
+        etop = #{record.etop,jdbcType=INTEGER},
       </if>
-      <if test="record.width != null">
-        width = #{record.width,jdbcType=INTEGER},
+      <if test="record.ewidth != null">
+        ewidth = #{record.ewidth,jdbcType=INTEGER},
       </if>
-      <if test="record.height != null">
-        height = #{record.height,jdbcType=INTEGER},
+      <if test="record.eheight != null">
+        eheight = #{record.eheight,jdbcType=INTEGER},
       </if>
-      <if test="record.index != null">
-        index = #{record.index,jdbcType=INTEGER},
+      <if test="record.eindex != null">
+        eindex = #{record.eindex,jdbcType=INTEGER},
       </if>
       <if test="record.duration != null">
         duration = #{record.duration,jdbcType=INTEGER},
@@ -257,8 +257,8 @@
       <if test="record.effect != null">
         effect = #{record.effect,jdbcType=INTEGER},
       </if>
-      <if test="record.mode != null">
-        mode = #{record.mode,jdbcType=INTEGER},
+      <if test="record.emode != null">
+        emode = #{record.emode,jdbcType=INTEGER},
       </if>
       <if test="record.remark != null">
         remark = #{record.remark,jdbcType=VARCHAR},
@@ -273,16 +273,16 @@
     set elementId = #{record.elementId,jdbcType=BIGINT},
       programId = #{record.programId,jdbcType=BIGINT},
       elementName = #{record.elementName,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=INTEGER},
+      etype = #{record.etype,jdbcType=INTEGER},
       background = #{record.background,jdbcType=VARCHAR},
-      left = #{record.left,jdbcType=INTEGER},
-      top = #{record.top,jdbcType=INTEGER},
-      width = #{record.width,jdbcType=INTEGER},
-      height = #{record.height,jdbcType=INTEGER},
-      index = #{record.index,jdbcType=INTEGER},
+      eleft = #{record.eleft,jdbcType=INTEGER},
+      etop = #{record.etop,jdbcType=INTEGER},
+      ewidth = #{record.ewidth,jdbcType=INTEGER},
+      eheight = #{record.eheight,jdbcType=INTEGER},
+      eindex = #{record.eindex,jdbcType=INTEGER},
       duration = #{record.duration,jdbcType=INTEGER},
       effect = #{record.effect,jdbcType=INTEGER},
-      mode = #{record.mode,jdbcType=INTEGER},
+      emode = #{record.emode,jdbcType=INTEGER},
       remark = #{record.remark,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -297,26 +297,26 @@
       <if test="elementName != null">
         elementName = #{elementName,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        type = #{type,jdbcType=INTEGER},
+      <if test="etype != null">
+        etype = #{etype,jdbcType=INTEGER},
       </if>
       <if test="background != null">
         background = #{background,jdbcType=VARCHAR},
       </if>
-      <if test="left != null">
-        left = #{left,jdbcType=INTEGER},
+      <if test="eleft != null">
+        eleft = #{eleft,jdbcType=INTEGER},
       </if>
-      <if test="top != null">
-        top = #{top,jdbcType=INTEGER},
+      <if test="etop != null">
+        etop = #{etop,jdbcType=INTEGER},
       </if>
-      <if test="width != null">
-        width = #{width,jdbcType=INTEGER},
+      <if test="ewidth != null">
+        ewidth = #{ewidth,jdbcType=INTEGER},
       </if>
-      <if test="height != null">
-        height = #{height,jdbcType=INTEGER},
+      <if test="eheight != null">
+        eheight = #{eheight,jdbcType=INTEGER},
       </if>
-      <if test="index != null">
-        index = #{index,jdbcType=INTEGER},
+      <if test="eindex != null">
+        eindex = #{eindex,jdbcType=INTEGER},
       </if>
       <if test="duration != null">
         duration = #{duration,jdbcType=INTEGER},
@@ -324,8 +324,8 @@
       <if test="effect != null">
         effect = #{effect,jdbcType=INTEGER},
       </if>
-      <if test="mode != null">
-        mode = #{mode,jdbcType=INTEGER},
+      <if test="emode != null">
+        emode = #{emode,jdbcType=INTEGER},
       </if>
       <if test="remark != null">
         remark = #{remark,jdbcType=VARCHAR},
@@ -337,18 +337,20 @@
     update tbl_element
     set programId = #{programId,jdbcType=BIGINT},
       elementName = #{elementName,jdbcType=VARCHAR},
-      type = #{type,jdbcType=INTEGER},
+      etype = #{etype,jdbcType=INTEGER},
       background = #{background,jdbcType=VARCHAR},
-      left = #{left,jdbcType=INTEGER},
-      top = #{top,jdbcType=INTEGER},
-      width = #{width,jdbcType=INTEGER},
-      height = #{height,jdbcType=INTEGER},
-      index = #{index,jdbcType=INTEGER},
+      eleft = #{eleft,jdbcType=INTEGER},
+      etop = #{etop,jdbcType=INTEGER},
+      ewidth = #{ewidth,jdbcType=INTEGER},
+      eheight = #{eheight,jdbcType=INTEGER},
+      eindex = #{eindex,jdbcType=INTEGER},
       duration = #{duration,jdbcType=INTEGER},
       effect = #{effect,jdbcType=INTEGER},
-      mode = #{mode,jdbcType=INTEGER},
+      emode = #{emode,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR}
     where elementId = #{elementId,jdbcType=BIGINT}
   </update>
+
+
 
 </mapper>

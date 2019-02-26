@@ -294,63 +294,63 @@ public class ElementExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andEtypeIsNull() {
+            addCriterion("etype is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andEtypeIsNotNull() {
+            addCriterion("etype is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Integer value) {
-            addCriterion("type =", value, "type");
+        public Criteria andEtypeEqualTo(Integer value) {
+            addCriterion("etype =", value, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Integer value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andEtypeNotEqualTo(Integer value) {
+            addCriterion("etype <>", value, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Integer value) {
-            addCriterion("type >", value, "type");
+        public Criteria andEtypeGreaterThan(Integer value) {
+            addCriterion("etype >", value, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andEtypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("etype >=", value, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Integer value) {
-            addCriterion("type <", value, "type");
+        public Criteria andEtypeLessThan(Integer value) {
+            addCriterion("etype <", value, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andEtypeLessThanOrEqualTo(Integer value) {
+            addCriterion("etype <=", value, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Integer> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andEtypeIn(List<Integer> values) {
+            addCriterion("etype in", values, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Integer> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andEtypeNotIn(List<Integer> values) {
+            addCriterion("etype not in", values, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Integer value1, Integer value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andEtypeBetween(Integer value1, Integer value2) {
+            addCriterion("etype between", value1, value2, "etype");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andEtypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("etype not between", value1, value2, "etype");
             return (Criteria) this;
         }
 
@@ -424,303 +424,303 @@ public class ElementExample {
             return (Criteria) this;
         }
 
-        public Criteria andLeftIsNull() {
-            addCriterion("left is null");
+        public Criteria andEleftIsNull() {
+            addCriterion("eleft is null");
             return (Criteria) this;
         }
 
-        public Criteria andLeftIsNotNull() {
-            addCriterion("left is not null");
+        public Criteria andEleftIsNotNull() {
+            addCriterion("eleft is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLeftEqualTo(Integer value) {
-            addCriterion("left =", value, "left");
+        public Criteria andEleftEqualTo(Integer value) {
+            addCriterion("eleft =", value, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftNotEqualTo(Integer value) {
-            addCriterion("left <>", value, "left");
+        public Criteria andEleftNotEqualTo(Integer value) {
+            addCriterion("eleft <>", value, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftGreaterThan(Integer value) {
-            addCriterion("left >", value, "left");
+        public Criteria andEleftGreaterThan(Integer value) {
+            addCriterion("eleft >", value, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftGreaterThanOrEqualTo(Integer value) {
-            addCriterion("left >=", value, "left");
+        public Criteria andEleftGreaterThanOrEqualTo(Integer value) {
+            addCriterion("eleft >=", value, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftLessThan(Integer value) {
-            addCriterion("left <", value, "left");
+        public Criteria andEleftLessThan(Integer value) {
+            addCriterion("eleft <", value, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftLessThanOrEqualTo(Integer value) {
-            addCriterion("left <=", value, "left");
+        public Criteria andEleftLessThanOrEqualTo(Integer value) {
+            addCriterion("eleft <=", value, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftIn(List<Integer> values) {
-            addCriterion("left in", values, "left");
+        public Criteria andEleftIn(List<Integer> values) {
+            addCriterion("eleft in", values, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftNotIn(List<Integer> values) {
-            addCriterion("left not in", values, "left");
+        public Criteria andEleftNotIn(List<Integer> values) {
+            addCriterion("eleft not in", values, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftBetween(Integer value1, Integer value2) {
-            addCriterion("left between", value1, value2, "left");
+        public Criteria andEleftBetween(Integer value1, Integer value2) {
+            addCriterion("eleft between", value1, value2, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andLeftNotBetween(Integer value1, Integer value2) {
-            addCriterion("left not between", value1, value2, "left");
+        public Criteria andEleftNotBetween(Integer value1, Integer value2) {
+            addCriterion("eleft not between", value1, value2, "eleft");
             return (Criteria) this;
         }
 
-        public Criteria andTopIsNull() {
-            addCriterion("top is null");
+        public Criteria andEtopIsNull() {
+            addCriterion("etop is null");
             return (Criteria) this;
         }
 
-        public Criteria andTopIsNotNull() {
-            addCriterion("top is not null");
+        public Criteria andEtopIsNotNull() {
+            addCriterion("etop is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTopEqualTo(Integer value) {
-            addCriterion("top =", value, "top");
+        public Criteria andEtopEqualTo(Integer value) {
+            addCriterion("etop =", value, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopNotEqualTo(Integer value) {
-            addCriterion("top <>", value, "top");
+        public Criteria andEtopNotEqualTo(Integer value) {
+            addCriterion("etop <>", value, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopGreaterThan(Integer value) {
-            addCriterion("top >", value, "top");
+        public Criteria andEtopGreaterThan(Integer value) {
+            addCriterion("etop >", value, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopGreaterThanOrEqualTo(Integer value) {
-            addCriterion("top >=", value, "top");
+        public Criteria andEtopGreaterThanOrEqualTo(Integer value) {
+            addCriterion("etop >=", value, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopLessThan(Integer value) {
-            addCriterion("top <", value, "top");
+        public Criteria andEtopLessThan(Integer value) {
+            addCriterion("etop <", value, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopLessThanOrEqualTo(Integer value) {
-            addCriterion("top <=", value, "top");
+        public Criteria andEtopLessThanOrEqualTo(Integer value) {
+            addCriterion("etop <=", value, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopIn(List<Integer> values) {
-            addCriterion("top in", values, "top");
+        public Criteria andEtopIn(List<Integer> values) {
+            addCriterion("etop in", values, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopNotIn(List<Integer> values) {
-            addCriterion("top not in", values, "top");
+        public Criteria andEtopNotIn(List<Integer> values) {
+            addCriterion("etop not in", values, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopBetween(Integer value1, Integer value2) {
-            addCriterion("top between", value1, value2, "top");
+        public Criteria andEtopBetween(Integer value1, Integer value2) {
+            addCriterion("etop between", value1, value2, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andTopNotBetween(Integer value1, Integer value2) {
-            addCriterion("top not between", value1, value2, "top");
+        public Criteria andEtopNotBetween(Integer value1, Integer value2) {
+            addCriterion("etop not between", value1, value2, "etop");
             return (Criteria) this;
         }
 
-        public Criteria andWidthIsNull() {
-            addCriterion("width is null");
+        public Criteria andEwidthIsNull() {
+            addCriterion("ewidth is null");
             return (Criteria) this;
         }
 
-        public Criteria andWidthIsNotNull() {
-            addCriterion("width is not null");
+        public Criteria andEwidthIsNotNull() {
+            addCriterion("ewidth is not null");
             return (Criteria) this;
         }
 
-        public Criteria andWidthEqualTo(Integer value) {
-            addCriterion("width =", value, "width");
+        public Criteria andEwidthEqualTo(Integer value) {
+            addCriterion("ewidth =", value, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthNotEqualTo(Integer value) {
-            addCriterion("width <>", value, "width");
+        public Criteria andEwidthNotEqualTo(Integer value) {
+            addCriterion("ewidth <>", value, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthGreaterThan(Integer value) {
-            addCriterion("width >", value, "width");
+        public Criteria andEwidthGreaterThan(Integer value) {
+            addCriterion("ewidth >", value, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthGreaterThanOrEqualTo(Integer value) {
-            addCriterion("width >=", value, "width");
+        public Criteria andEwidthGreaterThanOrEqualTo(Integer value) {
+            addCriterion("ewidth >=", value, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthLessThan(Integer value) {
-            addCriterion("width <", value, "width");
+        public Criteria andEwidthLessThan(Integer value) {
+            addCriterion("ewidth <", value, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthLessThanOrEqualTo(Integer value) {
-            addCriterion("width <=", value, "width");
+        public Criteria andEwidthLessThanOrEqualTo(Integer value) {
+            addCriterion("ewidth <=", value, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthIn(List<Integer> values) {
-            addCriterion("width in", values, "width");
+        public Criteria andEwidthIn(List<Integer> values) {
+            addCriterion("ewidth in", values, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthNotIn(List<Integer> values) {
-            addCriterion("width not in", values, "width");
+        public Criteria andEwidthNotIn(List<Integer> values) {
+            addCriterion("ewidth not in", values, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthBetween(Integer value1, Integer value2) {
-            addCriterion("width between", value1, value2, "width");
+        public Criteria andEwidthBetween(Integer value1, Integer value2) {
+            addCriterion("ewidth between", value1, value2, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andWidthNotBetween(Integer value1, Integer value2) {
-            addCriterion("width not between", value1, value2, "width");
+        public Criteria andEwidthNotBetween(Integer value1, Integer value2) {
+            addCriterion("ewidth not between", value1, value2, "ewidth");
             return (Criteria) this;
         }
 
-        public Criteria andHeightIsNull() {
-            addCriterion("height is null");
+        public Criteria andEheightIsNull() {
+            addCriterion("eheight is null");
             return (Criteria) this;
         }
 
-        public Criteria andHeightIsNotNull() {
-            addCriterion("height is not null");
+        public Criteria andEheightIsNotNull() {
+            addCriterion("eheight is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHeightEqualTo(Integer value) {
-            addCriterion("height =", value, "height");
+        public Criteria andEheightEqualTo(Integer value) {
+            addCriterion("eheight =", value, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightNotEqualTo(Integer value) {
-            addCriterion("height <>", value, "height");
+        public Criteria andEheightNotEqualTo(Integer value) {
+            addCriterion("eheight <>", value, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightGreaterThan(Integer value) {
-            addCriterion("height >", value, "height");
+        public Criteria andEheightGreaterThan(Integer value) {
+            addCriterion("eheight >", value, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightGreaterThanOrEqualTo(Integer value) {
-            addCriterion("height >=", value, "height");
+        public Criteria andEheightGreaterThanOrEqualTo(Integer value) {
+            addCriterion("eheight >=", value, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightLessThan(Integer value) {
-            addCriterion("height <", value, "height");
+        public Criteria andEheightLessThan(Integer value) {
+            addCriterion("eheight <", value, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightLessThanOrEqualTo(Integer value) {
-            addCriterion("height <=", value, "height");
+        public Criteria andEheightLessThanOrEqualTo(Integer value) {
+            addCriterion("eheight <=", value, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightIn(List<Integer> values) {
-            addCriterion("height in", values, "height");
+        public Criteria andEheightIn(List<Integer> values) {
+            addCriterion("eheight in", values, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightNotIn(List<Integer> values) {
-            addCriterion("height not in", values, "height");
+        public Criteria andEheightNotIn(List<Integer> values) {
+            addCriterion("eheight not in", values, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightBetween(Integer value1, Integer value2) {
-            addCriterion("height between", value1, value2, "height");
+        public Criteria andEheightBetween(Integer value1, Integer value2) {
+            addCriterion("eheight between", value1, value2, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andHeightNotBetween(Integer value1, Integer value2) {
-            addCriterion("height not between", value1, value2, "height");
+        public Criteria andEheightNotBetween(Integer value1, Integer value2) {
+            addCriterion("eheight not between", value1, value2, "eheight");
             return (Criteria) this;
         }
 
-        public Criteria andIndexIsNull() {
-            addCriterion("index is null");
+        public Criteria andEindexIsNull() {
+            addCriterion("eindex is null");
             return (Criteria) this;
         }
 
-        public Criteria andIndexIsNotNull() {
-            addCriterion("index is not null");
+        public Criteria andEindexIsNotNull() {
+            addCriterion("eindex is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIndexEqualTo(Integer value) {
-            addCriterion("index =", value, "index");
+        public Criteria andEindexEqualTo(Integer value) {
+            addCriterion("eindex =", value, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexNotEqualTo(Integer value) {
-            addCriterion("index <>", value, "index");
+        public Criteria andEindexNotEqualTo(Integer value) {
+            addCriterion("eindex <>", value, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexGreaterThan(Integer value) {
-            addCriterion("index >", value, "index");
+        public Criteria andEindexGreaterThan(Integer value) {
+            addCriterion("eindex >", value, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexGreaterThanOrEqualTo(Integer value) {
-            addCriterion("index >=", value, "index");
+        public Criteria andEindexGreaterThanOrEqualTo(Integer value) {
+            addCriterion("eindex >=", value, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexLessThan(Integer value) {
-            addCriterion("index <", value, "index");
+        public Criteria andEindexLessThan(Integer value) {
+            addCriterion("eindex <", value, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexLessThanOrEqualTo(Integer value) {
-            addCriterion("index <=", value, "index");
+        public Criteria andEindexLessThanOrEqualTo(Integer value) {
+            addCriterion("eindex <=", value, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexIn(List<Integer> values) {
-            addCriterion("index in", values, "index");
+        public Criteria andEindexIn(List<Integer> values) {
+            addCriterion("eindex in", values, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexNotIn(List<Integer> values) {
-            addCriterion("index not in", values, "index");
+        public Criteria andEindexNotIn(List<Integer> values) {
+            addCriterion("eindex not in", values, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexBetween(Integer value1, Integer value2) {
-            addCriterion("index between", value1, value2, "index");
+        public Criteria andEindexBetween(Integer value1, Integer value2) {
+            addCriterion("eindex between", value1, value2, "eindex");
             return (Criteria) this;
         }
 
-        public Criteria andIndexNotBetween(Integer value1, Integer value2) {
-            addCriterion("index not between", value1, value2, "index");
+        public Criteria andEindexNotBetween(Integer value1, Integer value2) {
+            addCriterion("eindex not between", value1, value2, "eindex");
             return (Criteria) this;
         }
 
@@ -844,63 +844,63 @@ public class ElementExample {
             return (Criteria) this;
         }
 
-        public Criteria andModeIsNull() {
-            addCriterion("mode is null");
+        public Criteria andEmodeIsNull() {
+            addCriterion("emode is null");
             return (Criteria) this;
         }
 
-        public Criteria andModeIsNotNull() {
-            addCriterion("mode is not null");
+        public Criteria andEmodeIsNotNull() {
+            addCriterion("emode is not null");
             return (Criteria) this;
         }
 
-        public Criteria andModeEqualTo(Integer value) {
-            addCriterion("mode =", value, "mode");
+        public Criteria andEmodeEqualTo(Integer value) {
+            addCriterion("emode =", value, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeNotEqualTo(Integer value) {
-            addCriterion("mode <>", value, "mode");
+        public Criteria andEmodeNotEqualTo(Integer value) {
+            addCriterion("emode <>", value, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeGreaterThan(Integer value) {
-            addCriterion("mode >", value, "mode");
+        public Criteria andEmodeGreaterThan(Integer value) {
+            addCriterion("emode >", value, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("mode >=", value, "mode");
+        public Criteria andEmodeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("emode >=", value, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeLessThan(Integer value) {
-            addCriterion("mode <", value, "mode");
+        public Criteria andEmodeLessThan(Integer value) {
+            addCriterion("emode <", value, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeLessThanOrEqualTo(Integer value) {
-            addCriterion("mode <=", value, "mode");
+        public Criteria andEmodeLessThanOrEqualTo(Integer value) {
+            addCriterion("emode <=", value, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeIn(List<Integer> values) {
-            addCriterion("mode in", values, "mode");
+        public Criteria andEmodeIn(List<Integer> values) {
+            addCriterion("emode in", values, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeNotIn(List<Integer> values) {
-            addCriterion("mode not in", values, "mode");
+        public Criteria andEmodeNotIn(List<Integer> values) {
+            addCriterion("emode not in", values, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeBetween(Integer value1, Integer value2) {
-            addCriterion("mode between", value1, value2, "mode");
+        public Criteria andEmodeBetween(Integer value1, Integer value2) {
+            addCriterion("emode between", value1, value2, "emode");
             return (Criteria) this;
         }
 
-        public Criteria andModeNotBetween(Integer value1, Integer value2) {
-            addCriterion("mode not between", value1, value2, "mode");
+        public Criteria andEmodeNotBetween(Integer value1, Integer value2) {
+            addCriterion("emode not between", value1, value2, "emode");
             return (Criteria) this;
         }
 

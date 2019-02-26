@@ -101,7 +101,7 @@ datasource:
 #### netty config #################################################################################
 netty:
   port: 10123
-  read-idle-time: 15
+  read-idle-time: 21
   write-idle-time: 0
   all-idle-time: 0
 
