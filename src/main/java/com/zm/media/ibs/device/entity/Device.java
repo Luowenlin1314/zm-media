@@ -23,6 +23,10 @@ public class Device {
 
     private Date updateTime;
 
+    private Date startTime;
+
+    private Date endTime;
+
     public Long getDeviceId() {
         return deviceId;
     }
@@ -101,5 +105,21 @@ public class Device {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 }

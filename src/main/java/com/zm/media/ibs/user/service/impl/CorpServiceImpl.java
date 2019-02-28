@@ -3,12 +3,16 @@ package com.zm.media.ibs.user.service.impl;
 import com.zm.media.ibs.user.entity.Corp;
 import com.zm.media.ibs.user.entity.CorpExample;
 import com.zm.media.ibs.user.entity.UserCorp;
+import com.zm.media.ibs.user.entity.UserDevice;
 import com.zm.media.ibs.user.persistence.CorpMapper;
 import com.zm.media.ibs.user.persistence.UserCorpMapper;
+import com.zm.media.ibs.user.persistence.UserDeviceMapper;
 import com.zm.media.ibs.user.service.CorpService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -23,6 +27,8 @@ public class CorpServiceImpl implements CorpService {
     private CorpMapper corpMapper;
     @Resource
     private UserCorpMapper userCorpMapper;
+    @Resource
+    private UserDeviceMapper userDeviceMapper;
 
 
     @Override
@@ -39,7 +45,22 @@ public class CorpServiceImpl implements CorpService {
         userCorp.setCreateTime(new Date());
         userCorpMapper.insertSelective(userCorp);
 
-        return corpMapper.insertSelective(corp);
+        //添加默认数量
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.YEAR, 1);
+
+        UserDevice userDevice = new UserDevice();
+        userDevice.setCreateTime(new Date());
+        userDevice.setStartTime(new Date());
+        userDevice.setEndTime(date);
+        userDevice.setUsecount(0);
+        userDevice.setTotalcount(1);
+        userDevice.setCopid(corp.getCorpId());
+        userDevice.setCreateBy(corp.getCreateBy());
+
+        return 1;
     }
 
     @Override

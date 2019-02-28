@@ -12,6 +12,9 @@ import com.zm.media.ibs.protocol.base.BasePro;
 import com.zm.media.ibs.protocol.constant.ProtocolCons;
 import com.zm.media.ibs.protocol.entity.Identity;
 import com.zm.media.ibs.user.entity.Corp;
+import com.zm.media.ibs.user.entity.UserDevice;
+import com.zm.media.ibs.user.entity.UserDeviceExample;
+import com.zm.media.ibs.user.persistence.UserDeviceMapper;
 import com.zm.media.ibs.user.service.CorpService;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -22,7 +25,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by USERA on 2019/2/14.
@@ -34,6 +39,8 @@ public class TerminalIdentityHandler extends BaseHandler{
     private CorpService corpService;
     @Autowired
     private DeviceService deviceService;
+    @Resource
+    private UserDeviceMapper userDeviceMapper;
     @Autowired
     private DeviceCorpService deviceCorpService;
     private SnowflakeIdWorker idWorker = new SnowflakeIdWorker();
@@ -46,12 +53,9 @@ public class TerminalIdentityHandler extends BaseHandler{
         //查找设备
         Device device = deviceService.getByDeviceCode(identity.getDeviceCode());
         if(device != null){
+            //TODO 时间判断
             addTerminal(device.getDeviceId(),ctx);
-            BasePro result = new BasePro();
-            result.setName(ProtocolCons.TERMINAL_IDENTITY_SUCCESS);
-            result.setData("success");
-            ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer(result.toJson(), CharsetUtil.UTF_8));
-            ctx.writeAndFlush(msg.duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+            ctx.writeAndFlush(buildFailConnect(ProtocolCons.TERMINAL_IDENTITY_SUCCESS,"success").duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             return;
         }
 
@@ -59,11 +63,28 @@ public class TerminalIdentityHandler extends BaseHandler{
         String corpCode = identity.getCorpCode();
         Corp corp = corpService.getByCode(corpCode);
         if(corp == null){
-            BasePro result = new BasePro();
-            result.setName(ProtocolCons.TERMINAL_IDENTITY_FAIL);
-            result.setData("fail");
-            ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer(result.toJson(), CharsetUtil.UTF_8));
-            ctx.writeAndFlush(msg.duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+            ctx.writeAndFlush(buildFailConnect(ProtocolCons.TERMINAL_IDENTITY_FAIL,"fail").duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+            return;
+        }
+
+        //查找公司剩余终端数量
+        UserDeviceExample userDeviceExample = new UserDeviceExample();
+        userDeviceExample.or().andCopidEqualTo(corp.getCorpId());
+        List<UserDevice> userDeviceList = userDeviceMapper.selectByExample(userDeviceExample);
+        UserDevice validUserDevice = null;
+        if(userDeviceList == null || userDeviceList.size() == 0){
+            ctx.writeAndFlush(buildFailConnect(ProtocolCons.TERMINAL_IDENTITY_FAIL,"fail").duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+            return;
+        }
+        for (UserDevice userDevice : userDeviceList) {
+            if((userDevice.getTotalcount() - userDevice.getUsecount()) > 0){
+                validUserDevice= userDevice;
+                break;
+            }
+        }
+
+        if(validUserDevice == null){
+            ctx.writeAndFlush(buildFailConnect(ProtocolCons.TERMINAL_IDENTITY_FAIL,"fail").duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             return;
         }
 
@@ -72,6 +93,8 @@ public class TerminalIdentityHandler extends BaseHandler{
         BeanUtils.copyProperties(identity,device);
         device.setCreateTime(new Date());
         device.setDeviceId(idWorker.nextId());
+        device.setStartTime(validUserDevice.getStartTime());
+        device.setEndTime(validUserDevice.getEndTime());
         deviceService.addDevice(device);
 
         //公司添加设备
@@ -81,12 +104,12 @@ public class TerminalIdentityHandler extends BaseHandler{
         deviceCorp.setDeviceId(device.getDeviceId());
         deviceCorpService.addDeviceCorp(deviceCorp);
 
+        //数量加1
+        validUserDevice.setUsecount(validUserDevice.getUsecount() + 1);
+        userDeviceMapper.updateByPrimaryKey(validUserDevice);
+
         addTerminal(device.getDeviceId(),ctx);
-        BasePro result = new BasePro();
-        result.setName(ProtocolCons.TERMINAL_IDENTITY_SUCCESS);
-        result.setData("success");
-        ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer(result.toJson(), CharsetUtil.UTF_8));
-        ctx.writeAndFlush(msg.duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+        ctx.writeAndFlush(buildFailConnect(ProtocolCons.TERMINAL_IDENTITY_SUCCESS,"success").duplicate()).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
     }
 
     private void addTerminal(Long deviceId, ChannelHandlerContext ctx){
@@ -94,4 +117,11 @@ public class TerminalIdentityHandler extends BaseHandler{
         logger.info("终端连接：" + deviceId + "，当前在线终端数量：" + TerminalContainer.getTerminalSize());
     }
 
+    private ByteBuf buildFailConnect(Integer name,String error){
+        BasePro result = new BasePro();
+        result.setName(ProtocolCons.TERMINAL_IDENTITY_FAIL);
+        result.setData("fail");
+        ByteBuf msg = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer(result.toJson(), CharsetUtil.UTF_8));
+        return msg;
+    }
 }

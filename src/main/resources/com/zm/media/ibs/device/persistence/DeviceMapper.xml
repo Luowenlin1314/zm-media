@@ -12,6 +12,8 @@
     <result column="remark" jdbcType="VARCHAR" property="remark" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -73,7 +75,7 @@
   </sql>
   <sql id="Base_Column_List">
     deviceId, deviceCode, netType, netIP, netMac, resolution, version, remark, createTime, 
-    updateTime
+    updateTime, startTime, endTime
   </sql>
   <select id="selectByExample" parameterType="com.zm.media.ibs.device.entity.DeviceExample" resultMap="BaseResultMap">
     select
@@ -109,11 +111,13 @@
     insert into tbl_device (deviceId, deviceCode, netType, 
       netIP, netMac, resolution, 
       version, remark, createTime, 
-      updateTime)
+      updateTime, startTime, endTime
+      )
     values (#{deviceId,jdbcType=BIGINT}, #{deviceCode,jdbcType=VARCHAR}, #{netType,jdbcType=INTEGER}, 
       #{netIP,jdbcType=VARCHAR}, #{netMac,jdbcType=VARCHAR}, #{resolution,jdbcType=VARCHAR}, 
       #{version,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{updateTime,jdbcType=TIMESTAMP}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.zm.media.ibs.device.entity.Device">
     insert into tbl_device
@@ -148,6 +152,12 @@
       <if test="updateTime != null">
         updateTime,
       </if>
+      <if test="startTime != null">
+        startTime,
+      </if>
+      <if test="endTime != null">
+        endTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="deviceId != null">
@@ -179,6 +189,12 @@
       </if>
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -221,6 +237,12 @@
       <if test="record.updateTime != null">
         updateTime = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.startTime != null">
+        startTime = #{record.startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endTime != null">
+        endTime = #{record.endTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -237,7 +259,9 @@
       version = #{record.version,jdbcType=VARCHAR},
       remark = #{record.remark,jdbcType=VARCHAR},
       createTime = #{record.createTime,jdbcType=TIMESTAMP},
-      updateTime = #{record.updateTime,jdbcType=TIMESTAMP}
+      updateTime = #{record.updateTime,jdbcType=TIMESTAMP},
+      startTime = #{record.startTime,jdbcType=TIMESTAMP},
+      endTime = #{record.endTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -272,6 +296,12 @@
       <if test="updateTime != null">
         updateTime = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="startTime != null">
+        startTime = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        endTime = #{endTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where deviceId = #{deviceId,jdbcType=BIGINT}
   </update>
@@ -285,8 +315,11 @@
       version = #{version,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       createTime = #{createTime,jdbcType=TIMESTAMP},
-      updateTime = #{updateTime,jdbcType=TIMESTAMP}
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      startTime = #{startTime,jdbcType=TIMESTAMP},
+      endTime = #{endTime,jdbcType=TIMESTAMP}
     where deviceId = #{deviceId,jdbcType=BIGINT}
   </update>
+
 
 </mapper>
